@@ -1,5 +1,4 @@
 import reader from "../keystatic/reader";
-import Image from "next/image";
 import { Anton, Source_Serif_4 } from "next/font/google";
 import { Jumbotron } from "../components/Jumbotron";
 import { formatDate } from "../utils/date";
@@ -42,15 +41,17 @@ export default async function Sermons() {
                 className="grid sm:grid-cols-3 grid-cols-1 mb-8 border-t pt-4 first:border-0"
               >
                 <div className="mb-8 sm:mb-0">
-                  <h2 className={`${sourceSerif.className} text-2xl mb-2`}>
+                  <h2
+                    className={`${sourceSerif.className} text-2xl mb-2 text-gray-900 dark:text-gray-300`}
+                  >
                     {sermon.title}
                   </h2>
-                  <p className="text-sm text-gray-300 mb-2">
+                  <p className="text-sm text-gray-900 dark:text-gray-300 mb-2">
                     {sermon.description}
                   </p>
                   <p className="text-sm">{sermon.speaker}</p>
                 </div>
-                <p className="sm:text-center text-gray-300 hidden sm:block">
+                <p className="sm:text-center text-gray-900 dark:text-gray-300 hidden sm:block">
                   {formatDate(sermon.date, false)}
                 </p>
                 <a
@@ -60,7 +61,7 @@ export default async function Sermons() {
                   Download
                 </a>
                 <div className="sm:hidden flex flex-row">
-                  <p className="sm:text-center text-gray-300 ">
+                  <p className="sm:text-center text-gray-900 dark:text-gray-300">
                     {formatDate(sermon.date, false)}
                   </p>
                   <a className="ml-auto hover:underline" href={sermon.file}>

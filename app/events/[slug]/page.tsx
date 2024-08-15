@@ -7,6 +7,14 @@ import Link from "next/link";
 
 const poppins = Poppins({ weight: "400", subsets: ["latin"] });
 
+export async function generateStaticParams() {
+  const events = await reader.collections.events.all();
+
+  return events.map((event) => ({
+    slug: event.slug,
+  }));
+}
+
 export default async function EventDetails({
   params: { slug },
 }: {
@@ -14,7 +22,6 @@ export default async function EventDetails({
 }) {
   console.info("SLUG", slug, typeof slug);
   const event = await reader.collections.events.read(`${slug}`);
-  console.info("COLLECTION", await reader.collections.events.all());
   console.info("EVENT", event);
 
   if (!event) {

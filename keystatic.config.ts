@@ -32,7 +32,7 @@ export default config({
     events: collection({
       label: "Events",
       slugField: "title",
-      path: "content/posts/*",
+      path: "content/events/*",
       format: { contentField: "content" },
       schema: {
         title: fields.slug({ name: { label: "Event Name" } }),

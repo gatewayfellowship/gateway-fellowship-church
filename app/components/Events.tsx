@@ -48,7 +48,7 @@ export const EventsContainer = ({ events }: { events: Array<Event> }) => {
       <div className="flex">
         <div
           onClick={() => setSelectedTag("")}
-          className="m-2 py-2 px-4 rounded-xl dark:bg-gray-700 dark:hover:bg-gray-500 cursor-pointer"
+          className="m-2 py-2 px-4 rounded-xl bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-500 cursor-pointer"
         >
           all
         </div>
@@ -56,7 +56,7 @@ export const EventsContainer = ({ events }: { events: Array<Event> }) => {
           <div
             key={tag}
             onClick={() => setSelectedTag(tag)}
-            className="m-2 py-2 px-4 rounded-xl dark:bg-gray-700 dark:hover:bg-gray-500 cursor-pointer"
+            className="m-2 py-2 px-4 rounded-xl bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-500 cursor-pointer"
           >
             {tag}
           </div>

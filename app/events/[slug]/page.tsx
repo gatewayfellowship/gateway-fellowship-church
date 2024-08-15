@@ -12,7 +12,9 @@ export default async function EventDetails({
 }: {
   params: { slug: string };
 }) {
+  console.info("SLUG", slug);
   const event = await reader.collections.events.read(slug);
+  console.info("EVENT", event);
 
   if (!event) {
     return "LOADING...";

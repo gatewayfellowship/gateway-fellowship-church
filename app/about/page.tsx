@@ -31,7 +31,7 @@ export default async function About() {
             {beliefs.content.map((belief) => (
               <div key={belief.title} className="mb-16">
                 <h4
-                  className={`${sourceSerif.className} text-3xl mb-8 text-gray-300`}
+                  className={`${sourceSerif.className} text-3xl mb-8 text-gray-800 dark:text-gray-300`}
                 >
                   {belief.title}
                 </h4>

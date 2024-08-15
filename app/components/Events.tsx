@@ -3,14 +3,23 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { formatDate } from "../utils/date";
 
-export const EventsContainer = ({ events }) => {
-  const [displayedEvents, setDisplayedEvents] = useState([]);
-  const [tags, setTags] = useState([]);
+interface Event {
+  address: string;
+  date: string;
+  location: string;
+  slug: string;
+  tags: readonly string[];
+  title: string;
+}
+
+export const EventsContainer = ({ events }: { events: Array<Event> }) => {
+  const [displayedEvents, setDisplayedEvents] = useState<Array<Event>>([]);
+  const [tags, setTags] = useState<Array<string>>([]);
   const [selectedTag, setSelectedTag] = useState("");
 
   useEffect(() => {
     const tags = events
-      .reduce((acc, event) => {
+      .reduce((acc: Array<string>, event) => {
         if (event.tags) {
           return acc.concat(event.tags);
         }
@@ -45,6 +54,7 @@ export const EventsContainer = ({ events }) => {
         </div>
         {tags.map((tag) => (
           <div
+            key={tag}
             onClick={() => setSelectedTag(tag)}
             className="m-2 py-2 px-4 rounded-xl dark:bg-gray-700 dark:hover:bg-gray-500 cursor-pointer"
           >

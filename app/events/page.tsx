@@ -35,7 +35,6 @@ export default async function Events() {
       <EventsContainer
         events={events.map((event) => {
           const { content, ...rest } = event.entry;
-          console.info("rest", rest);
           return { ...rest, slug: event.slug };
         })}
       />

@@ -1,9 +1,9 @@
 import reader from "./keystatic/reader";
 import Image from "next/image";
-import { Anton, Source_Serif_4, Poppins } from "next/font/google";
+import { Source_Serif_4, Poppins } from "next/font/google";
 import "./jumbotron.css";
+import { Jumbotron } from "./components/Jumbotron";
 
-const anton = Anton({ weight: "400", subsets: ["latin"] });
 const sourceSerif = Source_Serif_4({ weight: "900", subsets: ["latin"] });
 const poppins = Poppins({ weight: "400", subsets: ["latin"] });
 
@@ -19,30 +19,29 @@ export default async function Home() {
   return (
     <section>
       {/* Reusing Jumbotron styles here, this a specialized version of the Jumbotron component */}
-      <div
-        style={{
-          backgroundImage: `url(${page.imageSrc})`,
-        }}
-        className={`${anton.className} jumbotron h-screen flex relative items-center justify-evenly flex-col lg:flex-row w-screen p-12`}
+      <Jumbotron
+        title={page.title}
+        imageSrc={page.imageSrc}
+        className="jumbotron-main-page"
       >
         <div
-          className={`${sourceSerif.className} font-extrabold text-white w-full lg:w-3/4 z-10`}
+          className={`${sourceSerif.className} small-caps flex flex-col md:flex-row justify-center items-center font-extrabold text-white w-full z-10`}
         >
-          <h1 className="text-5xl leading-relaxed sm:leading-relaxed md:leading-relaxed md:text-7xl tracking-wide">
-            Knowing{" "}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-blue-200">
-              Christ
-            </span>
-            . Making{" "}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-300 to-amber-500">
-              Him
-            </span>{" "}
-            Known.
+          <div className="basis-1/2">
+            <Image
+              alt="Gateway Fellowship Symbol"
+              src="/Main_Anchor_White.png"
+              height={500}
+              width={500}
+            />
+          </div>
+          <h1 className="basis-1/2 text-5xl md:text-7xl sm:ml-8 text-left leading-relaxed sm:leading-relaxed md:leading-relaxed tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-indigo-700">
+            {page.title}
           </h1>
         </div>
-      </div>
+      </Jumbotron>
       {currentSermon && (
-        <div className="my-12 mx-4 sm:m-12">
+        <div className="mx-4 mt-24 sm:m-12">
           <h3 className="text-5xl font-black mb-8 small-caps">
             Current Series
           </h3>
@@ -62,7 +61,7 @@ export default async function Home() {
           </div>
         </div>
       )}
-      <hr className="my-24" />
+      <hr className="my-12 sm:my-24" />
       {distinctives && (
         <div className="my-12 mx-4 sm:m-12">
           <h3 className="text-5xl font-black mb-8 small-caps">

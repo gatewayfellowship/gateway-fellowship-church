@@ -3,11 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const Footer = () => (
-  <footer className="py-12 px-4 bg-white shadow-inner dark:bg-zinc-900 border-t-zinc-900 dark:border-t-white border-t-2">
+  <footer className="py-12 px-4 bg-white dark:bg-zinc-900 border-t-gray-200 dark:border-t-white border-t">
     <div className="mb-6 flex items-center justify-center">
       <Image
         className="dark:invert"
-        src="/header_symbol.svg"
+        src="/Black_Text_Between.png"
         alt="Gateway Fellowship"
         width={400}
         height={100}

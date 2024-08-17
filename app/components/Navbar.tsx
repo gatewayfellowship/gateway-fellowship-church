@@ -1,25 +1,62 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  useEffect(() => {
+    const scrollState = {
+      top: true,
+      topThreshold: 10,
+      onScroll: function () {
+        if (this.top && window.scrollY > this.topThreshold) {
+          this.top = false;
+          this.updateUI();
+        } else if (!this.top && window.scrollY <= this.topThreshold) {
+          this.top = true;
+          this.updateUI();
+        }
+      },
+      updateUI: function () {
+        const header = document.getElementById("app-nav");
+        header?.classList.toggle("shadow-xl");
+        header?.classList.toggle("border-b");
+      },
+    };
+
+    const onScroll = () => scrollState.onScroll();
+
+    window.addEventListener("scroll", onScroll);
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
 
   return (
     <header className="sticky top-0 left-0 right-0 z-50">
       <nav
-        className="flex items-center justify-between p-2 shadow-lg lg:px-8 bg-white dark:bg-zinc-900 border-b-2 border-gray-100"
+        id="app-nav"
+        className="flex items-center justify-between p-6 lg:p-4 bg-gray-50 dark:bg-zinc-900 border-gray-200 dark:border-gray-50"
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
           <Link className="-m-1.5 p-1.5" href="/">
             <span className="sr-only">Gateway Fellowship</span>
             <Image
-              src="/symbol_text_beside.svg"
+              src="/Anchor_Black.png"
               alt="Gateway Fellowship Logo"
-              className="dark:invert"
+              className="dark:invert hidden lg:block"
+              width={80}
+              height={80}
+              priority
+            />
+            <Image
+              src="/Black_Text_Beside.png"
+              alt="Gateway Fellowship Logo"
+              className="dark:invert lg:hidden"
               width={275}
               height={80}
               priority
@@ -29,7 +66,7 @@ export const Navbar = () => {
         <div className="flex lg:hidden">
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-gray-100"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 border-gray-200 text-gray-700 dark:text-gray-100"
             onClick={() => setIsOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
@@ -51,34 +88,40 @@ export const Navbar = () => {
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
           <Link
-            href="/new"
-            className="text-lg font-semibold leading-6 text-gray-900 hover:text-sky-700 dark:text-gray-100 dark:hover:text-sky-500 transition-all"
-          >
-            I&apos;m New
-          </Link>
-          <Link
             href="/about"
-            className="text-lg font-semibold leading-6 text-gray-900 hover:text-sky-700 dark:text-gray-100 dark:hover:text-sky-500 transition-all"
+            className="text-lg font-semibold leading-6 text-gray-900 hover:text-sky-800 dark:text-gray-100 dark:hover:text-sky-600 transition-all"
           >
             About Us
           </Link>
           <Link
             href="/sermons"
-            className="text-lg font-semibold leading-6 text-gray-900 hover:text-sky-700 dark:text-gray-100 dark:hover:text-sky-500 transition-all"
+            className="text-lg font-semibold leading-6 text-gray-900 hover:text-sky-800 dark:text-gray-100 dark:hover:text-sky-600 transition-all"
           >
             Sermons
           </Link>
           <Link
             href="/events"
-            className="text-lg font-semibold leading-6 text-gray-900 hover:text-sky-700 dark:text-gray-100 dark:hover:text-sky-500 transition-all"
+            className="text-lg font-semibold leading-6 text-gray-900 hover:text-sky-800 dark:text-gray-100 dark:hover:text-sky-600 transition-all"
           >
             Events
           </Link>
+          <Link
+            href="/watch"
+            className="text-lg font-semibold leading-6 text-gray-900 hover:text-sky-800 dark:text-gray-100 dark:hover:text-sky-600 transition-all"
+          >
+            Watch
+          </Link>
+          <Link
+            href="/give"
+            className="text-lg font-semibold leading-6 text-gray-900 hover:text-sky-800 dark:text-gray-100 dark:hover:text-sky-600 transition-all"
+          >
+            Give
+          </Link>
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Link href="/give" className="text-lg font-semibold">
-            <div className="py-2 px-8 text-gray-50 bg-zinc-700 hover:bg-zinc-800 rounded-lg cursor-pointer hover:shadow-lg transition-all">
-              Give
+          <Link href="/new" className="text-lg font-semibold">
+            <div className="py-2 px-8 text-gray-900 dark:text-white dark:border-white rounded-lg cursor-pointer border-2 border-gray-800 hover:bg-gray-800 hover:text-white hover:shadow-lg transition-all">
+              I&apos;m New
             </div>
           </Link>
         </div>
@@ -92,7 +135,7 @@ export const Navbar = () => {
               <a href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">Gateway Fellowship</span>
                 <Image
-                  src="/symbol_text_beside.svg"
+                  src="/Black_Text_Beside.png"
                   alt="Gateway Fellowship Logo"
                   className="dark:invert"
                   width={275}
@@ -127,13 +170,6 @@ export const Navbar = () => {
                 <div className="space-y-2 py-6">
                   <Link
                     onClick={() => setIsOpen(false)}
-                    href="/new"
-                    className="-mx-3 block rounded-lg px-3 py-2 text-2xl font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-gray-100"
-                  >
-                    I&apos;m New
-                  </Link>
-                  <Link
-                    onClick={() => setIsOpen(false)}
                     href="/about"
                     className="-mx-3 block rounded-lg px-3 py-2 text-2xl font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-gray-100"
                   >
@@ -153,14 +189,28 @@ export const Navbar = () => {
                   >
                     Events
                   </Link>
+                  <Link
+                    onClick={() => setIsOpen(false)}
+                    href="/watch"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-2xl font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-gray-100"
+                  >
+                    Watch
+                  </Link>
+                  <Link
+                    onClick={() => setIsOpen(false)}
+                    href="/give"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-2xl font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-gray-100"
+                  >
+                    Give
+                  </Link>
                 </div>
                 <div className="py-6">
                   <Link
                     onClick={() => setIsOpen(false)}
-                    href="/give"
+                    href="/new"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-2xl font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-gray-100"
                   >
-                    Give
+                    I&apos;m New
                   </Link>
                 </div>
               </div>

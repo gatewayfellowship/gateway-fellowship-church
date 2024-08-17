@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { formatDate } from "../utils/date";
 
@@ -16,6 +16,7 @@ export const EventsContainer = ({ events }: { events: Array<Event> }) => {
   const [displayedEvents, setDisplayedEvents] = useState<Array<Event>>([]);
   const [tags, setTags] = useState<Array<string>>([]);
   const [selectedTag, setSelectedTag] = useState("");
+  const today = useMemo(() => new Date().toISOString(), []);
 
   useEffect(() => {
     const tags = events
@@ -45,7 +46,8 @@ export const EventsContainer = ({ events }: { events: Array<Event> }) => {
   return (
     <div className="my-12 mx-4 sm:m-12">
       <h3 className="text-5xl font-black mb-8 small-caps">Upcoming Events</h3>
-      <div className="flex">
+      <div className="flex items-center">
+        Filter:
         <div
           onClick={() => setSelectedTag("")}
           className="m-2 py-2 px-4 rounded-xl bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-500 cursor-pointer"
@@ -62,7 +64,7 @@ export const EventsContainer = ({ events }: { events: Array<Event> }) => {
           </div>
         ))}
       </div>
-      <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 pt-8 pb-0 sm:py-8 mx-16">
+      <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 pt-8 pb-0 sm:py-8 mx-4 sm:mx-16">
         {displayedEvents
           .toSorted((a, z) => {
             if (a.date >= z.date) {
@@ -81,7 +83,7 @@ export const EventsContainer = ({ events }: { events: Array<Event> }) => {
               href={`/events/${encodeURIComponent(slug)}`}
               className="bg-gray-100 dark:bg-zinc-900 border rounded-lg border-solid border-zinc-100 py-4 px-8 hover:bg-gray-200 hover:dark:bg-zinc-800 hover:shadow-md transition-all"
             >
-              <div>
+              <div className={today > date ? "opacity-40" : ""}>
                 <h3 className="text-xl mb-4">{title}</h3>
                 <p>{formatDate(date)}</p>
               </div>

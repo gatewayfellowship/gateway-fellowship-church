@@ -27,7 +27,7 @@ export default async function About() {
           <h3 className="text-5xl font-black mb-8 small-caps">
             {beliefs.title}
           </h3>
-          <div className="mx-16">
+          <div className="mx-4 sm:mx-16">
             {beliefs.content.map((belief) => (
               <div key={belief.title} className="mb-16">
                 <h4
@@ -46,9 +46,12 @@ export default async function About() {
           <h3 className="text-5xl font-black mb-8 small-caps">
             {leadership.title}
           </h3>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 pt-8 pb-0 sm:py-8 mx-16">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 pt-8 pb-0 sm:py-8 mx-4 sm:mx-16">
             {leadership.content.map((leader) => (
-              <div key={leader.name} className="flex items-center flex-col">
+              <div
+                key={leader.name}
+                className="flex items-start sm:items-center flex-col"
+              >
                 <Image
                   className="rounded-lg mb-4"
                   src={leader.photoSrc}

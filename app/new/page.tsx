@@ -1,5 +1,4 @@
 import reader from "../keystatic/reader";
-import Image from "next/image";
 import { Anton } from "next/font/google";
 import { Jumbotron } from "../components/Jumbotron";
 
@@ -13,10 +12,12 @@ export default async function ImNew() {
   }
 
   return (
-    <Jumbotron
-      title={page.title}
-      subtitle={page.subtitle}
-      imageSrc={page.imageSrc}
-    />
+    <main>
+      <Jumbotron
+        title={page.title}
+        subtitle={page.subtitle}
+        imageSrc={page.imageSrc}
+      />
+    </main>
   );
 }

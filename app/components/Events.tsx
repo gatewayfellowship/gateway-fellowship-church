@@ -2,6 +2,8 @@
 import React, { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { formatDate } from "../utils/date";
+import { Title } from "./Title";
+import { ContentContainer } from "./ContentContainer";
 
 interface Event {
   address: string;
@@ -44,13 +46,13 @@ export const EventsContainer = ({ events }: { events: Array<Event> }) => {
   }, [events, selectedTag]);
 
   return (
-    <div className="my-12 mx-4 sm:m-12">
-      <h3 className="text-5xl font-black mb-8 small-caps">Upcoming Events</h3>
+    <ContentContainer>
+      <Title text="Events" />
       <div className="flex items-center">
         Filter:
         <div
           onClick={() => setSelectedTag("")}
-          className="m-2 py-2 px-4 rounded-xl bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-500 cursor-pointer"
+          className="m-2 py-2 px-4 rounded-xl bg-zinc-200 hover:bg-zinc-300 dark:bg-zinc-700 dark:hover:bg-zinc-500 cursor-pointer"
         >
           all
         </div>
@@ -58,7 +60,7 @@ export const EventsContainer = ({ events }: { events: Array<Event> }) => {
           <div
             key={tag}
             onClick={() => setSelectedTag(tag)}
-            className="m-2 py-2 px-4 rounded-xl bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-500 cursor-pointer"
+            className="m-2 py-2 px-4 rounded-xl bg-zinc-200 hover:bg-zinc-300 dark:bg-zinc-700 dark:hover:bg-zinc-500 cursor-pointer"
           >
             {tag}
           </div>
@@ -81,7 +83,7 @@ export const EventsContainer = ({ events }: { events: Array<Event> }) => {
             <Link
               key={slug}
               href={`/events/${encodeURIComponent(slug)}`}
-              className="bg-gray-100 dark:bg-zinc-900 border rounded-lg border-solid border-zinc-100 py-4 px-8 hover:bg-gray-200 hover:dark:bg-zinc-800 hover:shadow-md transition-all"
+              className="bg-zinc-100 dark:bg-zinc-900 border rounded-lg border-solid border-zinc-100 py-4 px-8 hover:bg-zinc-200 hover:dark:bg-zinc-800 hover:shadow-md transition-all"
             >
               <div className={today > date ? "opacity-40" : ""}>
                 <h3 className="text-xl mb-4">{title}</h3>
@@ -90,6 +92,6 @@ export const EventsContainer = ({ events }: { events: Array<Event> }) => {
             </Link>
           ))}
       </div>
-    </div>
+    </ContentContainer>
   );
 };

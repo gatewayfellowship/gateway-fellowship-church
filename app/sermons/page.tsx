@@ -2,6 +2,7 @@ import reader from "../keystatic/reader";
 import { Anton, Source_Serif_4 } from "next/font/google";
 import { Jumbotron } from "../components/Jumbotron";
 import { formatDate } from "../utils/date";
+import { ContentContainer } from "../components/ContentContainer";
 
 const anton = Anton({ weight: "400", subsets: ["latin"] });
 const sourceSerif = Source_Serif_4({ weight: "700", subsets: ["latin"] });
@@ -22,7 +23,7 @@ export default async function Sermons() {
         imageSrc={page.imageSrc}
       />
       {sermons && (
-        <section className="my-12 mx-4 sm:m-12">
+        <ContentContainer>
           {sermons.content
             .toSorted((a, z) => {
               if (a.date >= z.date) {
@@ -42,16 +43,16 @@ export default async function Sermons() {
               >
                 <div className="mb-8 sm:mb-0">
                   <h2
-                    className={`${sourceSerif.className} text-2xl mb-2 text-gray-900 dark:text-gray-300`}
+                    className={`${sourceSerif.className} text-2xl mb-2 text-zinc-900 dark:text-zinc-300`}
                   >
                     {sermon.title}
                   </h2>
-                  <p className="text-sm text-gray-900 dark:text-gray-300 mb-2">
+                  <p className="text-sm text-zinc-900 dark:text-zinc-300 mb-2">
                     {sermon.description}
                   </p>
                   <p className="text-sm">{sermon.speaker}</p>
                 </div>
-                <p className="sm:text-center text-gray-900 dark:text-gray-300 hidden sm:block">
+                <p className="sm:text-center text-zinc-900 dark:text-zinc-300 hidden sm:block">
                   {formatDate(sermon.date, false)}
                 </p>
                 <a
@@ -61,7 +62,7 @@ export default async function Sermons() {
                   Download
                 </a>
                 <div className="sm:hidden flex flex-row">
-                  <p className="sm:text-center text-gray-900 dark:text-gray-300">
+                  <p className="sm:text-center text-zinc-900 dark:text-zinc-300">
                     {formatDate(sermon.date, false)}
                   </p>
                   <a className="ml-auto hover:underline" href={sermon.file}>
@@ -70,7 +71,7 @@ export default async function Sermons() {
                 </div>
               </div>
             ))}
-        </section>
+        </ContentContainer>
       )}
     </main>
   );

@@ -152,6 +152,58 @@ export default config({
         ),
       },
     }),
+    thingsToKnow: singleton({
+      label: "Things to Know",
+      schema: {
+        title: fields.text({
+          label: "Things to Know section title",
+          validation: { isRequired: true },
+        }),
+        content: fields.array(
+          fields.object({
+            title: fields.text({
+              label: "Title",
+              validation: { isRequired: true },
+            }),
+            description: fields.text({
+              label: "Description",
+              multiline: true,
+              validation: { isRequired: true },
+            }),
+          }),
+          {
+            label: "Things to Know",
+            itemLabel: (props) => props.fields.title.value,
+          }
+        ),
+      },
+    }),
+    whatToExpect: singleton({
+      label: "What to Expect",
+      schema: {
+        title: fields.text({
+          label: "What to Expect section title",
+          validation: { isRequired: true },
+        }),
+        content: fields.array(
+          fields.object({
+            title: fields.text({
+              label: "Title",
+              validation: { isRequired: true },
+            }),
+            description: fields.text({
+              label: "Description",
+              multiline: true,
+              validation: { isRequired: true },
+            }),
+          }),
+          {
+            label: "What to Expect",
+            itemLabel: (props) => props.fields.title.value,
+          }
+        ),
+      },
+    }),
     sermons: singleton({
       label: "Sermons",
       schema: {
@@ -184,6 +236,27 @@ export default config({
           {
             label: "Sermon Library",
             itemLabel: (props) => props.fields.title.value,
+          }
+        ),
+      },
+    }),
+    services: singleton({
+      label: "Services",
+      schema: {
+        content: fields.array(
+          fields.object({
+            dayOfWeek: fields.text({
+              label: "Day of the week (Sundays, Wednesdays, etc.)",
+              validation: { isRequired: true },
+            }),
+            time: fields.text({
+              label: "Time(s) of day (i.e. 10am & 6pm or a single time of day)",
+              validation: { isRequired: true },
+            }),
+          }),
+          {
+            label: "Services",
+            itemLabel: (props) => props.fields.dayOfWeek.value,
           }
         ),
       },

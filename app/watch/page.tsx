@@ -1,8 +1,6 @@
 import reader from "../keystatic/reader";
-import { Anton } from "next/font/google";
 import { Jumbotron } from "../components/Jumbotron";
-
-const anton = Anton({ weight: "400", subsets: ["latin"] });
+import { ContentContainer } from "../components/ContentContainer";
 
 export default async function Watch() {
   const page = await reader.collections.pages.read("watch");
@@ -18,8 +16,7 @@ export default async function Watch() {
         subtitle={page.subtitle}
         imageSrc={page.imageSrc}
       />
-      <section className="mx-4 my-24 sm:m-12">
-        <h3 className="text-5xl font-black mb-8 small-caps">Watch Live</h3>
+      <ContentContainer>
         <div className="sm:w-4/5 my-0 mx-auto">
           <div className="video-container">
             <iframe
@@ -40,11 +37,11 @@ export default async function Watch() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div className="py-2 px-8 text-gray-50 bg-zinc-700 hover:bg-zinc-800 rounded-lg cursor-pointer hover:shadow-lg transition-all">
+          <div className="py-2 px-8 text-zinc-50 bg-zinc-700 hover:bg-zinc-800 rounded-lg cursor-pointer hover:shadow-lg transition-all">
             Watch on Youtube
           </div>
         </a>
-      </section>
+      </ContentContainer>
     </main>
   );
 }

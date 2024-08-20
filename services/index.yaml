@@ -1,0 +1,5 @@
+content:
+  - dayOfWeek: Sundays
+    time: 11am & 6pm
+  - dayOfWeek: Wednesdays
+    time: 7pm

@@ -51,7 +51,7 @@ export const Navbar = () => {
               src="/Black_Text_Beside.png"
               alt="Gateway Fellowship Logo"
               className="dark:invert hidden lg:block"
-              width={300}
+              width={240}
               height={80}
               priority
             />

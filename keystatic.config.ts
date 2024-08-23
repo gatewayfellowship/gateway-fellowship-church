@@ -261,5 +261,27 @@ export default config({
         ),
       },
     }),
+    announcment: singleton({
+      label: "Announcement",
+      schema: {
+        title: fields.text({
+          label: "Announcement Title",
+          validation: { isRequired: false },
+        }),
+        description: fields.text({
+          label: "Announcement Description",
+          validation: { isRequired: true },
+        }),
+        link: fields.url({
+          label: "Link/url to the page/site you want to send visitors to",
+          validation: { isRequired: false },
+        }),
+        linkText: fields.text({
+          label:
+            "Text for the button in the announcement if you include a link",
+          validation: { isRequired: false },
+        }),
+      },
+    }),
   },
 });

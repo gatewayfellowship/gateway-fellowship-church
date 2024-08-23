@@ -43,6 +43,20 @@ body {
   height: 100%;
 }
 
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(150%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.announcement {
+  transform: translateY(150%);
+  animation: 600ms ease-in-out 1500ms 1 slideInFromBottom forwards;
+}
+
 /* Overrides for Markdown content */
 article {
   h1,

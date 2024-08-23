@@ -4,6 +4,7 @@ import { Source_Serif_4, Poppins } from "next/font/google";
 import { Jumbotron } from "./components/Jumbotron";
 import { ContentContainer } from "./components/ContentContainer";
 import { ButtonLink } from "./components/ButtonLink";
+import Announcement from "./components/Annoucement";
 
 const sourceSerif = Source_Serif_4({ weight: "900", subsets: ["latin"] });
 const poppins = Poppins({ weight: "400", subsets: ["latin"] });
@@ -19,6 +20,7 @@ export default async function Home() {
 
   return (
     <section>
+      <Announcement />
       <Jumbotron
         title={page.title}
         imageSrc={page.imageSrc}
@@ -31,8 +33,8 @@ export default async function Home() {
             <Image
               alt="Gateway Fellowship Symbol"
               src="/White_Circle_Text.png"
-              height={500}
-              width={500}
+              height={600}
+              width={600}
             />
           </div>
           {/* <h1 className="basis-1/2 text-5xl md:text-7xl sm:ml-8 text-left leading-relaxed sm:leading-relaxed md:leading-relaxed tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-indigo-700">

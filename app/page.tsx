@@ -21,7 +21,10 @@ export default async function Home() {
   const jesusIndex = title.toLowerCase().indexOf("jesus");
   const newTitle = [
     title.slice(0, jesusIndex),
-    <span className="invert dark:invert-0 bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-secondary-600 dark:from-primary-500 dark:to-secondary-500">
+    <span
+      key="jesus"
+      className="invert dark:invert-0 bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-secondary-600 dark:from-primary-500 dark:to-secondary-500"
+    >
       Jesus
     </span>,
     title.slice(jesusIndex + 5),
@@ -79,7 +82,7 @@ export default async function Home() {
               {distinctives.title}
             </h3>
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 pt-8 pb-0 sm:py-8">
-              {distinctives?.content.map((value, index, arr) => (
+              {distinctives?.content.map((value, index) => (
                 <div
                   key={index}
                   className="flex flex-col mb-8 md:mb-0 md:basis-80 flex-shrink-0 font-bold p-6 rounded-xl bg-accent-50 dark:bg-accent-800"

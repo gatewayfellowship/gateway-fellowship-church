@@ -39,20 +39,16 @@ export default async function Sermons() {
             .map((sermon) => (
               <div
                 key={sermon.title}
-                className="grid sm:grid-cols-3 grid-cols-1 mb-8 border-t pt-4 first:border-0"
+                className="grid sm:grid-cols-3 grid-cols-1 mb-8 border-t pt-4 first:border-0 border-text-light dark:border-text-dark"
               >
                 <div className="mb-8 sm:mb-0">
-                  <h2
-                    className={`${sourceSerif.className} text-2xl mb-2 text-zinc-900 dark:text-zinc-300`}
-                  >
+                  <h2 className={`${sourceSerif.className} text-2xl mb-2`}>
                     {sermon.title}
                   </h2>
-                  <p className="text-sm text-zinc-900 dark:text-zinc-300 mb-2">
-                    {sermon.description}
-                  </p>
+                  <p className="text-sm mb-2">{sermon.description}</p>
                   <p className="text-sm">{sermon.speaker}</p>
                 </div>
-                <p className="sm:text-center text-zinc-900 dark:text-zinc-300 hidden sm:block">
+                <p className="sm:text-center hidden sm:block">
                   {formatDate(sermon.date, false)}
                 </p>
                 <a
@@ -62,7 +58,7 @@ export default async function Sermons() {
                   Download
                 </a>
                 <div className="sm:hidden flex flex-row">
-                  <p className="sm:text-center text-zinc-900 dark:text-zinc-300">
+                  <p className="sm:text-center">
                     {formatDate(sermon.date, false)}
                   </p>
                   <a className="ml-auto hover:underline" href={sermon.file}>

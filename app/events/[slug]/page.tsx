@@ -33,11 +33,8 @@ export default async function EventDetails({
   const renderable = Markdoc.transform(node);
 
   return (
-    <main className="m-16">
-      <Link
-        href="/events"
-        className="font-bold dark:text-zinc-300 dark:hover:text-zinc-400"
-      >
+    <main className="m-4 sm:m-16">
+      <Link href="/events" className="font-bold">
         <Image
           className="inline-block dark:invert dark:opacity-80"
           src="/chevron-left.svg"
@@ -50,7 +47,9 @@ export default async function EventDetails({
       <ContentContainer>
         <section className="flex items-center my-8 mx-4">
           <div className="max-w-prose">
-            <h3 className={`${poppins.className} text-5xl mb-8`}>
+            <h3
+              className={`${poppins.className} text-5xl mb-8 text-accent-600 dark:text-accent-300`}
+            >
               {event.title}
             </h3>
             <p className="mb-4">{formatDate(event.date)}</p>
@@ -61,7 +60,7 @@ export default async function EventDetails({
                 href={`https://maps.google.com/?q=${event.address}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mb-4 dark:text-zinc-400 dark:hover:text-zinc-500 hover:underline"
+                className="mb-4 hover:underline"
               >
                 {event.address}
               </a>

@@ -45,6 +45,10 @@ export const EventsContainer = ({ events }: { events: Array<Event> }) => {
     }
   }, [events, selectedTag]);
 
+  const selectedTagClasses = "bg-accent-200 dark:bg-accent-700";
+  const normalClasses =
+    "bg-accent-100 hover:bg-accent-200 dark:bg-accent-800 dark:hover:bg-accent-700";
+
   return (
     <ContentContainer>
       <Title text="Events" />
@@ -52,7 +56,9 @@ export const EventsContainer = ({ events }: { events: Array<Event> }) => {
         Filter:
         <div
           onClick={() => setSelectedTag("")}
-          className="m-2 py-2 px-4 rounded-xl bg-zinc-200 hover:bg-zinc-300 dark:bg-zinc-700 dark:hover:bg-zinc-500 cursor-pointer"
+          className={`m-2 py-2 px-4 rounded-xl cursor-pointer ${
+            selectedTag === "" ? selectedTagClasses : normalClasses
+          }`}
         >
           all
         </div>
@@ -60,13 +66,15 @@ export const EventsContainer = ({ events }: { events: Array<Event> }) => {
           <div
             key={tag}
             onClick={() => setSelectedTag(tag)}
-            className="m-2 py-2 px-4 rounded-xl bg-zinc-200 hover:bg-zinc-300 dark:bg-zinc-700 dark:hover:bg-zinc-500 cursor-pointer"
+            className={`m-2 py-2 px-4 rounded-xl cursor-pointer ${
+              selectedTag === tag ? selectedTagClasses : normalClasses
+            }`}
           >
             {tag}
           </div>
         ))}
       </div>
-      <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 pt-8 pb-0 sm:py-8 mx-4 sm:mx-16">
+      <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 pt-8 pb-0 sm:py-8">
         {displayedEvents
           .toSorted((a, z) => {
             if (a.date >= z.date) {
@@ -83,7 +91,7 @@ export const EventsContainer = ({ events }: { events: Array<Event> }) => {
             <Link
               key={slug}
               href={`/events/${encodeURIComponent(slug)}`}
-              className="bg-zinc-100 dark:bg-zinc-900 border rounded-lg border-solid border-zinc-100 py-4 px-8 hover:bg-zinc-200 hover:dark:bg-zinc-800 hover:shadow-md transition-all"
+              className="bg-secondary-100 dark:bg-secondary-900 border-secondary-300 dark:border-secondary-600 hover:bg-secondary-200 hover:dark:bg-secondary-800 py-4 px-8 border rounded-lg border-solid hover:shadow-md transition-all"
             >
               <div className={today > date ? "opacity-40" : ""}>
                 <h3 className="text-xl mb-4">{title}</h3>

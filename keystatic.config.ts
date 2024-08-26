@@ -261,7 +261,7 @@ export default config({
         ),
       },
     }),
-    announcment: singleton({
+    announcement: singleton({
       label: "Announcement",
       schema: {
         title: fields.text({

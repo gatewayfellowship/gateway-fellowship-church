@@ -1,6 +1,7 @@
 import reader from "../keystatic/reader";
 import { Jumbotron } from "../components/Jumbotron";
 import { ContentContainer } from "../components/ContentContainer";
+import { ButtonLink } from "../components/ButtonLink";
 
 export default async function Watch() {
   const page = await reader.collections.pages.read("watch");
@@ -31,16 +32,13 @@ export default async function Watch() {
             />
           </div>
         </div>
-        <a
-          href="https://www.youtube.com/@gatewayfellowshipsbc8663"
-          className="block text-lg font-semibold my-8 mx-auto w-fit"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className="py-2 px-8 text-zinc-50 bg-zinc-700 hover:bg-zinc-800 rounded-lg cursor-pointer hover:shadow-lg transition-all">
-            Watch on Youtube
-          </div>
-        </a>
+        <ButtonLink
+          isExternal
+          primary
+          className="block my-8 mx-auto w-fit"
+          text="Watch on YouTube"
+          to="https://www.youtube.com/@gatewayfellowshipsbc8663"
+        />
       </ContentContainer>
     </main>
   );

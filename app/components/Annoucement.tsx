@@ -6,26 +6,26 @@ const poppins = Poppins({ weight: "400", subsets: ["latin"] });
 const poppinsBold = Poppins({ weight: "700", subsets: ["latin"] });
 
 export default async function Announcement() {
-  const announcment = await reader.singletons.announcment.read();
+  const announcement = await reader.singletons.announcement.read();
 
-  if (!announcment) {
+  if (!announcement) {
     return null;
   }
 
   return (
     <div
-      id="announcment"
+      id="announcement"
       className="fixed bottom-0 left-0 right-0 py-8 px-4 z-40 announcement"
     >
       <div
-        className={`${poppins.className} rounded-xl shadow-xl flex items-center gap-x-6 bg-sky-100 px-6 py-2.5 sm:px-3.5 sm:before:flex-1`}
+        className={`${poppins.className} rounded-xl shadow-xl flex items-center gap-x-6 bg-primary-300 px-6 py-2.5 sm:px-3.5 sm:before:flex-1`}
       >
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-          <p className="text-sm leading-6 text-zinc-900">
-            {announcment.title && (
+          <p className="text-sm leading-6 text-custom-dark-text">
+            {announcement.title && (
               <React.Fragment>
                 <strong className={`$${poppinsBold.className} font-bold`}>
-                  {announcment.title}
+                  {announcement.title}
                 </strong>
                 <svg
                   viewBox="0 0 2 2"
@@ -36,14 +36,14 @@ export default async function Announcement() {
                 </svg>
               </React.Fragment>
             )}
-            {announcment.description}
+            {announcement.description}
           </p>
-          {announcment.link && (
+          {announcement.link && (
             <a
-              href={announcment.link}
-              className="flex-none rounded-full text-zinc-50 bg-zinc-700 hover:bg-zinc-800 px-3.5 py-1 text-sm font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900"
+              href={announcement.link}
+              className="flex-none rounded-full bg-accent-200 hover:bg-accent-300 dark:bg-accent-700 dark:hover:bg-accent-800 hover:shadow px-3.5 py-1 text-sm font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900"
             >
-              {announcment.linkText || "Learn More"}{" "}
+              {announcement.linkText || "Learn More"}{" "}
               <span aria-hidden="true">&rarr;</span>
             </a>
           )}
@@ -55,7 +55,7 @@ export default async function Announcement() {
           >
             <span className="sr-only">Dismiss</span>
             <svg
-              className="h-5 w-5 text-zinc-900"
+              className="h-5 w-5 text-text-light"
               viewBox="0 0 20 20"
               fill="currentColor"
               aria-hidden="true"

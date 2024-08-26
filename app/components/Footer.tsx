@@ -7,7 +7,7 @@ export const Footer = async () => {
   const services = await reader.singletons.services.read();
 
   return (
-    <footer className="py-12 px-4 bg-gradient-to-r from-zinc-100 to-zinc-200 dark:from-zinc-700 dark:to-zinc-900 border-t-zinc-200 dark:border-t-zinc-700 border-t rounded-t-3xl">
+    <footer className="py-12 px-4 bg-gradient-to-r from-secondary-50 to-secondary-100 dark:from-secondary-800 dark:to-secondary-900 border-t-secondary-100 dark:border-t-secondary-900 border-t rounded-t-3xl">
       <div className="mb-6 flex items-center justify-center">
         <Image
           className="dark:invert"
@@ -20,26 +20,26 @@ export const Footer = async () => {
       <div className="mb-6">
         <div className="flex flex-col md:flex-row justify-evenly w-full">
           <div className="mb-6">
-            <h4 className="text-zinc-800 text-2xl mb-6 font-bold dark:text-zinc-100">
+            <h4 className="text-accent-500 dark:text-accent-200 text-2xl mb-6 font-bold">
               About
             </h4>
             <ul>
-              <li className="mb-3 text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-500">
+              <li className="mb-3 text-text-light dark:text-text-dark">
                 <Link className="hover:underline" href="/about">
                   Our Beliefs
                 </Link>
               </li>
-              <li className="mb-3 text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-500">
+              <li className="mb-3 text-text-light dark:text-text-dark">
                 <Link className="hover:underline" href="/about">
                   Our History
                 </Link>
               </li>
-              <li className="mb-3 text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-500">
+              <li className="mb-3 text-text-light dark:text-text-dark">
                 <Link className="hover:underline" href="/about">
                   Missions
                 </Link>
               </li>
-              <li className="mb-3 text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-500">
+              <li className="mb-3 text-text-light dark:text-text-dark">
                 <Link className="hover:underline" href="/about">
                   Leadership
                 </Link>
@@ -47,27 +47,29 @@ export const Footer = async () => {
             </ul>
           </div>
           <div className="mb-6">
-            <h4 className="text-zinc-800 text-2xl mb-6 font-bold dark:text-zinc-100">
+            <h4 className="text-accent-500 dark:text-accent-200 text-2xl mb-6 font-bold">
               Contact
             </h4>
             <ul>
               <li className="mb-3">
-                <a className="clickable-link" href="tel:4808924711">
-                  phone: (480) 892-4711
+                phone:{" "}
+                <a className="hover:underline" href="tel:4808924711">
+                  480.892.4711
                 </a>
               </li>
               <li className="mb-3">
+                email:{" "}
                 <a
-                  className="clickable-link"
+                  className="hover:underline"
                   href="mailto:gateway@gatewayfellowship.org"
                 >
-                  email: gateway@gatewayfellowship.org
+                  gateway@gatewayfellowship.org
                 </a>
               </li>
             </ul>
           </div>
           <div className="mb-6">
-            <h4 className="text-zinc-800 text-2xl mb-6 font-bold dark:text-zinc-100">
+            <h4 className="text-accent-500 dark:text-accent-200 text-2xl mb-6 font-bold">
               Visit
             </h4>
             <ul>
@@ -78,7 +80,7 @@ export const Footer = async () => {
               ))}
               <li className="mb-3">
                 <a
-                  className="hover:underline dark:text-zinc-400 dark:hover:text-zinc-500"
+                  className="hover:underline"
                   href="https://maps.app.goo.gl/tSQBMEk8cV1AhiEg6"
                   rel="noopener noreferrer"
                   target="_blank"
@@ -109,7 +111,7 @@ export const Footer = async () => {
         </div>
         <div className="flex justify-end">
           <a
-            className="p-4"
+            className="p-4 cursor-pointer"
             title="facebook"
             href="https://www.facebook.com/profile.php?id=100064455289156"
             rel="noopener noreferrer"
@@ -124,7 +126,7 @@ export const Footer = async () => {
             />
           </a>
           <a
-            className="p-4"
+            className="p-4 cursor-pointer"
             title="youtube"
             href="https://www.youtube.com/@gatewayfellowshipsbc8663"
             rel="noopener noreferrer"

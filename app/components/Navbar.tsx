@@ -22,9 +22,8 @@ export const Navbar = () => {
       },
       updateUI: function () {
         const header = document.getElementById("app-nav");
-        header?.classList.toggle("shadow-xl");
-        header?.classList.toggle("dark:shadow-lg");
-        header?.classList.toggle("border-b");
+        header?.classList.toggle("shadow-md");
+        header?.classList.toggle("dark:shadow-md");
       },
     };
 
@@ -37,11 +36,14 @@ export const Navbar = () => {
     };
   }, []);
 
+  const linkClasses =
+    "text-lg font-semibold leading-6 text-text-light hover:text-primary-500 dark:text-text-dark dark:hover:text-primary-300 transition-all";
+
   return (
     <header className="sticky top-0 left-0 right-0 z-50">
       <nav
         id="app-nav"
-        className="flex items-center justify-between p-6 lg:p-4 bg-zinc-50 dark:bg-zinc-900 border-zinc-200 dark:border-zinc-700 rounded-b-3xl dark:shadow-zinc-700"
+        className="flex items-center justify-between p-6 lg:p-4 bg-background-light dark:bg-background-dark rounded-b-3xl dark:shadow-accent-700"
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
@@ -89,34 +91,19 @@ export const Navbar = () => {
           </button>
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
-          <Link
-            href="/about"
-            className="text-lg font-semibold leading-6 text-zinc-900 hover:text-sky-800 dark:text-zinc-100 dark:hover:text-sky-600 transition-all"
-          >
+          <Link href="/about" className={linkClasses}>
             About Us
           </Link>
-          <Link
-            href="/sermons"
-            className="text-lg font-semibold leading-6 text-zinc-900 hover:text-sky-800 dark:text-zinc-100 dark:hover:text-sky-600 transition-all"
-          >
+          <Link href="/sermons" className={linkClasses}>
             Sermons
           </Link>
-          <Link
-            href="/events"
-            className="text-lg font-semibold leading-6 text-zinc-900 hover:text-sky-800 dark:text-zinc-100 dark:hover:text-sky-600 transition-all"
-          >
+          <Link href="/events" className={linkClasses}>
             Events
           </Link>
-          <Link
-            href="/watch"
-            className="text-lg font-semibold leading-6 text-zinc-900 hover:text-sky-800 dark:text-zinc-100 dark:hover:text-sky-600 transition-all"
-          >
+          <Link href="/watch" className={linkClasses}>
             Watch
           </Link>
-          <Link
-            href="/give"
-            className="text-lg font-semibold leading-6 text-zinc-900 hover:text-sky-800 dark:text-zinc-100 dark:hover:text-sky-600 transition-all"
-          >
+          <Link href="/give" className={linkClasses}>
             Give
           </Link>
         </div>
@@ -128,7 +115,7 @@ export const Navbar = () => {
       {isOpen && (
         <div className="lg:hidden" role="dialog" aria-modal="true">
           <div className="fixed inset-0 z-50"></div>
-          <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white dark:bg-black px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-zinc-900/10">
+          <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-background-light dark:bg-background-dark px-6 py-6 sm:max-w-sm shadow-md dark:shadow-accent-700">
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">Gateway Fellowship</span>
@@ -164,40 +151,40 @@ export const Navbar = () => {
               </button>
             </div>
             <div className="mt-6 flow-root">
-              <div className="-my-6 divide-y divide-zinc-500/10 dark:divide-zinc-100">
+              <div className="-my-6 divide-y divide-accent-500 dark:divide-accent-400">
                 <div className="space-y-2 py-6">
                   <Link
                     onClick={() => setIsOpen(false)}
                     href="/about"
-                    className="-mx-3 block rounded-lg px-3 py-2 text-2xl font-semibold leading-7 text-zinc-900 hover:bg-zinc-50 dark:text-zinc-100"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-2xl font-semibold leading-7 text-text-light hover:bg-primary-100 dark:text-text-dark hover:dark:bg-primary-400"
                   >
                     About Us
                   </Link>
                   <Link
                     onClick={() => setIsOpen(false)}
                     href="/sermons"
-                    className="-mx-3 block rounded-lg px-3 py-2 text-2xl font-semibold leading-7 text-zinc-900 hover:bg-zinc-50 dark:text-zinc-100"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-2xl font-semibold leading-7 text-text-light hover:bg-primary-100 dark:text-text-dark hover:dark:bg-primary-400"
                   >
                     Sermons
                   </Link>
                   <Link
                     onClick={() => setIsOpen(false)}
                     href="/events"
-                    className="-mx-3 block rounded-lg px-3 py-2 text-2xl font-semibold leading-7 text-zinc-900 hover:bg-zinc-50 dark:text-zinc-100"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-2xl font-semibold leading-7 text-text-light hover:bg-primary-100 dark:text-text-dark hover:dark:bg-primary-400"
                   >
                     Events
                   </Link>
                   <Link
                     onClick={() => setIsOpen(false)}
                     href="/watch"
-                    className="-mx-3 block rounded-lg px-3 py-2 text-2xl font-semibold leading-7 text-zinc-900 hover:bg-zinc-50 dark:text-zinc-100"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-2xl font-semibold leading-7 text-text-light hover:bg-primary-100 dark:text-text-dark hover:dark:bg-primary-400"
                   >
                     Watch
                   </Link>
                   <Link
                     onClick={() => setIsOpen(false)}
                     href="/give"
-                    className="-mx-3 block rounded-lg px-3 py-2 text-2xl font-semibold leading-7 text-zinc-900 hover:bg-zinc-50 dark:text-zinc-100"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-2xl font-semibold leading-7 text-text-light hover:bg-primary-100 dark:text-text-dark hover:dark:bg-primary-400"
                   >
                     Give
                   </Link>
@@ -206,7 +193,7 @@ export const Navbar = () => {
                   <Link
                     onClick={() => setIsOpen(false)}
                     href="/new"
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-2xl font-semibold leading-7 text-zinc-900 hover:bg-zinc-50 dark:text-zinc-100"
+                    className="-mx-3 block rounded-lg px-3 py-2.5 text-2xl font-semibold leading-7 text-text-light hover:bg-primary-100 dark:text-text-dark hover:dark:bg-primary-400"
                   >
                     I&apos;m New
                   </Link>

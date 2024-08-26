@@ -23,7 +23,7 @@ export default async function About() {
       />
       <ContentContainer>
         {beliefs && (
-          <div className="my-12 mx-4 sm:m-12">
+          <div className="my-12">
             <Title text={beliefs.title} />
             {beliefs.content.map((belief) => (
               <div key={belief.title} className="mb-16">
@@ -34,9 +34,9 @@ export default async function About() {
           </div>
         )}
         {leadership && (
-          <div className="my-12 mx-4 sm:m-12">
+          <div className="my-12">
             <Title text={leadership.title} />
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 pt-8 pb-0 sm:py-8 mx-4 sm:mx-16">
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 pt-8 pb-0 sm:py-8">
               {leadership.content.map((leader) => (
                 <div
                   key={leader.name}

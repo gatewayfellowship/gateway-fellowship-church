@@ -17,6 +17,15 @@ export default async function Home() {
   if (!page) {
     return "LOADING...";
   }
+  const title = page.title;
+  const jesusIndex = title.toLowerCase().indexOf("jesus");
+  const newTitle = [
+    title.slice(0, jesusIndex),
+    <span className="invert dark:invert-0 bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-secondary-600 dark:from-primary-500 dark:to-secondary-500">
+      Jesus
+    </span>,
+    title.slice(jesusIndex + 5),
+  ];
 
   return (
     <section>
@@ -24,28 +33,29 @@ export default async function Home() {
       <Jumbotron
         title={page.title}
         imageSrc={page.imageSrc}
-        className="jumbotron-main-page"
+        className="jumbotron-main-page invert dark:invert-0"
       >
         <div
-          className={`${sourceSerif.className} small-caps flex flex-col md:flex-row justify-center items-center font-extrabold text-white w-full z-10`}
+          className={`${sourceSerif.className} small-caps flex flex-col md:flex-row justify-center items-center font-extrabold text-text-dark w-full z-10`}
         >
           <div>
             <Image
+              className="basis-1/2"
               alt="Gateway Fellowship Symbol"
               src="/White_Circle_Text.png"
               height={600}
               width={600}
             />
           </div>
-          {/* <h1 className="basis-1/2 text-5xl md:text-7xl sm:ml-8 text-left leading-relaxed sm:leading-relaxed md:leading-relaxed tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-indigo-700">
-            {page.title}
-          </h1> */}
+          <h1 className="basis-1/2 text-zinc-300 text-5xl md:text-7xl sm:ml-8 text-left leading-relaxed sm:leading-relaxed md:leading-relaxed tracking-wide">
+            {newTitle}
+          </h1>
         </div>
       </Jumbotron>
       <ContentContainer>
         {currentSermon && (
           <div>
-            <h3 className="text-5xl font-black mb-8 small-caps">
+            <h3 className="text-5xl text-accent-600 dark:text-accent-300 mb-8 small-caps">
               Current Series
             </h3>
             <div className="flex flex-col justify-center items-center">
@@ -62,20 +72,20 @@ export default async function Home() {
             </div>
           </div>
         )}
-        <hr className="my-12 sm:my-24" />
+        <hr className="my-12 sm:my-24 border-secondary-200" />
         {distinctives && (
           <div>
-            <h3 className="text-5xl font-black mb-8 small-caps">
+            <h3 className="text-5xl text-accent-600 dark:text-accent-300 mb-8 small-caps">
               {distinctives.title}
             </h3>
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 pt-8 pb-0 sm:py-8">
               {distinctives?.content.map((value, index, arr) => (
                 <div
                   key={index}
-                  className="flex flex-col mb-8 md:mb-0 md:basis-80 flex-shrink-0 md:border-r-zinc-400 font-bold px-6"
+                  className="flex flex-col mb-8 md:mb-0 md:basis-80 flex-shrink-0 font-bold p-6 rounded-xl bg-accent-50 dark:bg-accent-800"
                 >
                   <h4
-                    className={`${poppins.className} text-4xl text-zinc-400 mb-10`}
+                    className={`${poppins.className} text-4xl text-accent-600 dark:text-accent-300 mb-10`}
                   >{`${index + 1 <= 9 ? 0 : ""}${index + 1}`}</h4>
                   <p className="mb-8">{value}</p>
                 </div>

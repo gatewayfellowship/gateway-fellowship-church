@@ -25,11 +25,11 @@ export const Jumbotron = ({
   >
     {children ?? (
       <React.Fragment>
-        <h1 className="text-5xl text-white z-10 sm:leading-relaxed small-caps mb-8 sm:mb-4">
+        <h1 className="text-5xl text-text-dark z-10 sm:leading-relaxed small-caps mb-8 sm:mb-4">
           {title}
         </h1>
         {subtitle && (
-          <h6 className="text-xl text-white z-10 tracking-widest">
+          <h6 className="text-xl text-text-dark z-10 tracking-widest">
             {subtitle}
           </h6>
         )}

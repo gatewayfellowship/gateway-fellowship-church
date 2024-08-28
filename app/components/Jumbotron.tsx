@@ -6,10 +6,10 @@ const soureSerif = Source_Serif_4({ weight: "400", subsets: ["latin"] });
 
 export const Jumbotron = ({
   children,
-  className,
   imageSrc,
   subtitle,
   title,
+  className = "",
 }: {
   imageSrc: string;
   title: string;

@@ -1,12 +1,11 @@
 import reader from "./keystatic/reader";
 import Image from "next/image";
-import { Source_Serif_4, Poppins } from "next/font/google";
-import { Jumbotron } from "./components/Jumbotron";
+import { Poppins } from "next/font/google";
 import { ContentContainer } from "./components/ContentContainer";
 import { ButtonLink } from "./components/ButtonLink";
 import Announcement from "./components/Annoucement";
 
-const sourceSerif = Source_Serif_4({ weight: "900", subsets: ["latin"] });
+const poppinsBold = Poppins({ weight: "700", subsets: ["latin"] });
 const poppins = Poppins({ weight: "400", subsets: ["latin"] });
 
 export default async function Home() {
@@ -17,44 +16,27 @@ export default async function Home() {
   if (!page) {
     return "LOADING...";
   }
-  const title = page.title;
-  const jesusIndex = title.toLowerCase().indexOf("jesus");
-  const newTitle = [
-    title.slice(0, jesusIndex),
-    <span
-      key="jesus"
-      className="invert dark:invert-0 bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-secondary-600 dark:from-primary-500 dark:to-secondary-500"
-    >
-      Jesus
-    </span>,
-    title.slice(jesusIndex + 5),
-  ];
 
   return (
     <section>
       <Announcement />
-      <Jumbotron
-        title={page.title}
-        imageSrc={page.imageSrc}
-        className="jumbotron-main-page invert dark:invert-0"
-      >
+      <div className="rounded-3xl mx-4 mb-12 mt-0 p-4 sm:p-12 bg-[linear-gradient(345deg,_#fbfefd_0%,_#eff3f5_20%,_#e0e7eb_60%,_#a2b7c3_100%)] dark:bg-[linear-gradient(135deg,_#141b1f_0%,_#3c515d_40%,_#c1cfd7_90%,_#fbfefd_100%)]">
         <div
-          className={`${sourceSerif.className} small-caps flex flex-col md:flex-row justify-center items-center font-extrabold text-text-dark w-full z-10`}
+          className={`${poppinsBold.className} small-caps flex flex-col md:flex-row justify-center items-center font-extrabold text-text-dark w-full z-10 invert dark:invert-0`}
         >
-          <div>
-            <Image
-              className="basis-1/2"
-              alt="Gateway Fellowship Symbol"
-              src="/White_Circle_Text.png"
-              height={600}
-              width={600}
-            />
-          </div>
-          <h1 className="basis-1/2 text-zinc-300 text-5xl md:text-7xl sm:ml-8 text-left leading-relaxed sm:leading-relaxed md:leading-relaxed tracking-wide">
-            {newTitle}
+          <Image
+            className="basis-1/2 shrink h-auto w-auto min-w-0"
+            alt="Gateway Fellowship Symbol"
+            src="/White_Circle_Text.png"
+            height={600}
+            width={600}
+          />
+          <h1 className="basis-1/2 min-w-0 text-4xl md:text-6xl sm:ml-8 text-left leading-relaxed sm:leading-relaxed md:leading-relaxed tracking-wide">
+            {page.title}
           </h1>
         </div>
-      </Jumbotron>
+      </div>
+      {/* </Jumbotron> */}
       <ContentContainer>
         {currentSermon && (
           <div>

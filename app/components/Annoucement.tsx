@@ -18,7 +18,7 @@ export default async function Announcement() {
       className="fixed bottom-0 left-0 right-0 py-8 px-4 z-40 announcement"
     >
       <div
-        className={`${poppins.className} rounded-xl shadow-xl flex items-center gap-x-6 bg-primary-300 px-6 py-2.5 sm:px-3.5 sm:before:flex-1`}
+        className={`${poppins.className} rounded-xl shadow-xl flex items-center gap-x-6 bg-primary-300 dark:bg-primary-400 px-6 py-2.5 sm:px-3.5 sm:before:flex-1`}
       >
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
           <p className="text-sm leading-6 text-custom-dark-text">
@@ -41,7 +41,7 @@ export default async function Announcement() {
           {announcement.link && (
             <a
               href={announcement.link}
-              className="flex-none rounded-full bg-accent-200 hover:bg-accent-300 dark:bg-accent-700 dark:hover:bg-accent-800 hover:shadow px-3.5 py-1 text-sm font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900"
+              className="flex-none rounded-full bg-accent-100 hover:bg-accent-200 dark:bg-accent-600 dark:hover:bg-accent-700 hover:shadow px-3.5 py-1 text-sm font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900"
             >
               {announcement.linkText || "Learn More"}{" "}
               <span aria-hidden="true">&rarr;</span>

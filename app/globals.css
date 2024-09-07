@@ -52,10 +52,10 @@ body {
   }
 }
 
-.announcement {
+/* .announcement {
   transform: translateY(150%);
   animation: 600ms ease-in-out 1500ms 1 slideInFromBottom forwards;
-}
+} */
 
 /* Overrides for Markdown content */
 article {

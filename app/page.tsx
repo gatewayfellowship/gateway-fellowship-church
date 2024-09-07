@@ -20,12 +20,7 @@ export default async function Home() {
   return (
     <section>
       <Announcement />
-      <div
-        className="rounded-3xl mx-4 mb-12 mt-0 p-4 sm:p-12
-      background-image: linear-gradient(to right, #434343 0%, black 100%);
-      bg-[linear-gradient(135deg,_#fdfcfb_0%,_#e2d1c3_100%)] dark:bg-[linear-gradient(to_right,_#434343_0%,_#000_100%)]
-      "
-      >
+      <div className="rounded-3xl mx-4 mb-12 mt-0 p-4 sm:p-12 bg-[linear-gradient(135deg,_#fdfcfb_0%,_#e2d1c3_100%)] dark:bg-[linear-gradient(to_right,_#434343_0%,_#000_100%)]">
         <div
           className={`${poppinsBold.className} small-caps flex flex-col md:flex-row justify-center items-center font-extrabold text-text-dark w-full z-10 invert dark:invert-0`}
         >
@@ -41,7 +36,6 @@ export default async function Home() {
           </h1>
         </div>
       </div>
-      {/* </Jumbotron> */}
       <ContentContainer>
         {currentSermon && (
           <div>

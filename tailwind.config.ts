@@ -9,6 +9,10 @@ const config: Config = {
   plugins: [],
   theme: {
     extend: {
+      spacing: {
+        "22": "5.5rem",
+        "24": "6rem",
+      },
       colors: {
         background: {
           light: "#fbfefd",

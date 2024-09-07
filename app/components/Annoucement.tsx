@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Poppins } from "next/font/google";
 import reader from "../keystatic/reader";
 
@@ -15,10 +15,10 @@ export default async function Announcement() {
   return (
     <div
       id="announcement"
-      className="fixed bottom-0 left-0 right-0 py-8 px-4 z-40 announcement"
+      className="fixed top-0 left-0 right-0 z-40 announcement "
     >
       <div
-        className={`${poppins.className} rounded-xl shadow-xl flex items-center gap-x-6 bg-stone-200 dark:bg-stone-500 px-6 py-2.5 sm:px-3.5 sm:before:flex-1`}
+        className={`${poppins.className} flex items-center justify-center gap-x-6 bg-gradient-to-br from-stone-50 to-stone-200 dark:from-stone-500 dark:to-stone-700 px-6 py-2.5 sm:px-3.5 max-h-22 md:max-h-12`}
       >
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
           <p className="text-sm leading-6 text-custom-dark-text">
@@ -41,28 +41,12 @@ export default async function Announcement() {
           {announcement.link && (
             <a
               href={announcement.link}
-              className="flex-none rounded-full bg-accent-300 hover:bg-accent-400 dark:bg-accent-600 dark:hover:bg-accent-700 hover:shadow px-3.5 py-1 text-sm font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900"
+              className="text-sm font-semibold py-1 px-3.5 text-primary-50 dark:text-primary-900 bg-primary-500 dark:bg-primary-400 hover:bg-primary-600 dark:hover:bg-primary-500 border-2 border-primary-500 hover:border-primary-600 dark:border-primary-400 dark:hover:border-primary-500 rounded-lg cursor-pointer hover:shadow-md transition-all"
             >
               {announcement.linkText || "Learn More"}{" "}
               <span aria-hidden="true">&rarr;</span>
             </a>
           )}
-        </div>
-        <div className="flex flex-1 justify-end">
-          <button
-            type="button"
-            className="-m-3 p-3 focus-visible:outline-offset-[-4px]"
-          >
-            <span className="sr-only">Dismiss</span>
-            <svg
-              className="h-5 w-5 text-text-light"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              aria-hidden="true"
-            >
-              <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
-            </svg>
-          </button>
         </div>
       </div>
     </div>

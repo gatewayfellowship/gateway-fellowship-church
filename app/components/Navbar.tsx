@@ -43,7 +43,7 @@ export const Navbar = () => {
     <header className="sticky top-0 left-0 right-0 z-50">
       <nav
         id="app-nav"
-        className="flex items-center justify-between p-6 lg:p-4 bg-background-light dark:bg-background-dark rounded-b-3xl dark:shadow-accent-700"
+        className="flex items-center justify-between p-6 lg:p-4 bg-background-light dark:bg-stone-900 rounded-b-3xl dark:shadow-stone-800"
         aria-label="Global"
       >
         <div className="flex lg:flex-1">

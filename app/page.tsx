@@ -20,7 +20,12 @@ export default async function Home() {
   return (
     <section>
       <Announcement />
-      <div className="rounded-3xl mx-4 mb-12 mt-0 p-4 sm:p-12 bg-[linear-gradient(345deg,_#fbfefd_0%,_#eff3f5_20%,_#e0e7eb_60%,_#a2b7c3_100%)] dark:bg-[linear-gradient(135deg,_#141b1f_0%,_#3c515d_40%,_#c1cfd7_90%,_#fbfefd_100%)]">
+      <div
+        className="rounded-3xl mx-4 mb-12 mt-0 p-4 sm:p-12
+      background-image: linear-gradient(to right, #434343 0%, black 100%);
+      bg-[linear-gradient(135deg,_#fdfcfb_0%,_#e2d1c3_100%)] dark:bg-[linear-gradient(to_right,_#434343_0%,_#000_100%)]
+      "
+      >
         <div
           className={`${poppinsBold.className} small-caps flex flex-col md:flex-row justify-center items-center font-extrabold text-text-dark w-full z-10 invert dark:invert-0`}
         >
@@ -67,7 +72,7 @@ export default async function Home() {
               {distinctives?.content.map((value, index) => (
                 <div
                   key={index}
-                  className="flex flex-col mb-8 md:mb-0 md:basis-80 flex-shrink-0 font-bold p-6 rounded-xl bg-accent-50 dark:bg-accent-800"
+                  className="flex flex-col mb-8 md:mb-0 md:basis-80 flex-shrink-0 font-bold p-6 rounded-xl bg-stone-100 dark:bg-stone-800"
                 >
                   <h4
                     className={`${poppins.className} text-4xl text-accent-600 dark:text-accent-300 mb-10`}

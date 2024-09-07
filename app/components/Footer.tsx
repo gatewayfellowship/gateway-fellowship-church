@@ -7,7 +7,7 @@ export const Footer = async () => {
   const services = await reader.singletons.services.read();
 
   return (
-    <footer className="py-12 px-4 bg-gradient-to-r from-secondary-50 to-secondary-100 dark:from-secondary-800 dark:to-secondary-900 border-t-secondary-100 dark:border-t-secondary-900 border-t rounded-t-3xl">
+    <footer className="py-12 px-4 bg-gradient-to-r from-stone-50 to-stone-200 dark:from-stone-800 dark:to-stone-900 border-t-stone-100 dark:border-t-stone-900 border-t rounded-t-3xl">
       <div className="mb-6 flex items-center justify-center">
         <Image
           className="dark:invert"

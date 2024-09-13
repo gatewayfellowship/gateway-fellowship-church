@@ -1,5 +1,13 @@
 content:
   - dayOfWeek: Sundays
-    time: 11am & 6pm
+    serviceTypes:
+      - name: Bible Study
+        time: "8:30"
+      - name: Coffee in the Lobby
+        time: "9:30"
+      - name: Service
+        time: "10:00"
   - dayOfWeek: Wednesdays
-    time: 7pm
+    serviceTypes:
+      - name: Worship
+        time: "6:30"

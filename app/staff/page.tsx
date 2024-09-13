@@ -3,12 +3,10 @@ import Image from "next/image";
 import { Jumbotron } from "../components/Jumbotron";
 import { ContentContainer } from "../components/ContentContainer";
 import { Title } from "../components/Title";
-import { Subtitle } from "../components/Subtitle";
 
-export default async function About() {
-  const page = await reader.collections.pages.read("about");
+export default async function Staff() {
+  const page = await reader.collections.pages.read("staff");
   const leadership = await reader.singletons.leadership.read();
-  const beliefs = await reader.singletons.beliefs.read();
 
   if (!page) {
     return "LOADING...";
@@ -22,26 +20,20 @@ export default async function About() {
         imageSrc={page.imageSrc}
       />
       <ContentContainer>
-        {beliefs && (
-          <div className="my-12">
-            <Title text={beliefs.title} />
-            {beliefs.content.map((belief) => (
-              <div key={belief.title} className="mb-16">
-                <Subtitle text={belief.title} />
-                <p>{belief.description}</p>
-              </div>
-            ))}
-          </div>
-        )}
         {leadership && (
           <div className="my-12">
             <Title text={leadership.title} />
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 pt-8 pb-0 sm:py-8">
+            <div
+              className={`grid gap-8 pt-8 pb-0 sm:py-8 grid-cols-1 ${
+                leadership.content.length >= 3
+                  ? "sm:grid-cols-2 lg:grid-cols-3"
+                  : leadership.content.length === 2
+                  ? "sm:grid-cols-2"
+                  : ""
+              }`}
+            >
               {leadership.content.map((leader) => (
-                <div
-                  key={leader.name}
-                  className="flex items-start sm:items-center flex-col"
-                >
+                <div key={leader.name} className="flex items-center flex-col">
                   <Image
                     className="rounded-lg mb-4"
                     src={leader.photoSrc}

@@ -1,10 +1,10 @@
 import reader from "../keystatic/reader";
-import { Anton, Source_Serif_4 } from "next/font/google";
+import { Source_Serif_4 } from "next/font/google";
 import { Jumbotron } from "../components/Jumbotron";
 import { formatDate } from "../utils/date";
 import { ContentContainer } from "../components/ContentContainer";
+import { ButtonLink } from "../components/ButtonLink";
 
-const anton = Anton({ weight: "400", subsets: ["latin"] });
 const sourceSerif = Source_Serif_4({ weight: "700", subsets: ["latin"] });
 
 export default async function Sermons() {
@@ -21,6 +21,13 @@ export default async function Sermons() {
         title={page.title}
         subtitle={page.subtitle}
         imageSrc={page.imageSrc}
+      />
+      <ButtonLink
+        isExternal
+        primary
+        className="block my-8 mx-auto w-fit"
+        text="Watch on YouTube"
+        to="https://www.youtube.com/@gatewayfellowshipsbc8663"
       />
       {sermons && (
         <ContentContainer>

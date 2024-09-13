@@ -24,13 +24,17 @@ export default async function ImNew() {
       <ContentContainer>
         <div className="mt-24 mb-36">
           <Title text="Service Times" />
-          {/* <hr className="mt-8 mb-12" /> */}
           {services?.content?.map((service, index) => (
             <div
               key={`${service.dayOfWeek}-${index}`}
-              className="text-3xl mb-3 text-center"
+              className="text-center mb-12 last:mb-0"
             >
-              {`${service.dayOfWeek} at ${service.time}`}
+              <Subtitle text={service.dayOfWeek} />
+              {service.serviceTypes.map((serviceType) => (
+                <div key={serviceType.name} className="text-lg mb-4">
+                  {serviceType.name} at {serviceType.time}
+                </div>
+              ))}
             </div>
           ))}
         </div>

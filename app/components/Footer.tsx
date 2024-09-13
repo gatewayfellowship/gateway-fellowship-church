@@ -1,7 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { Poppins } from "next/font/google";
 import reader from "../keystatic/reader";
+
+const poppins = Poppins({ weight: "400", subsets: ["latin"] });
+const poppinsBold = Poppins({ weight: "700", subsets: ["latin"] });
 
 export const Footer = async () => {
   const services = await reader.singletons.services.read();
@@ -74,41 +78,37 @@ export const Footer = async () => {
             </h4>
             <ul>
               {services?.content?.map((service, index) => (
-                <li key={`${service.dayOfWeek}-${index}`} className="mb-3">
-                  {`${service.dayOfWeek}: ${service.time}`}
+                <li
+                  key={`${service.dayOfWeek}-${index}`}
+                  className={`${poppinsBold.className} mb-3 text-lg`}
+                >
+                  {service.dayOfWeek}
+                  <div>
+                    {service.serviceTypes.map((serviceType) => (
+                      <div
+                        key={`${serviceType.name}`}
+                        className={`${poppins.className} font-normal text-base`}
+                      >{`${serviceType.name}: ${serviceType.time}`}</div>
+                    ))}
+                  </div>
                 </li>
               ))}
-              <li className="mb-3">
-                <a
-                  className="hover:underline"
-                  href="https://maps.app.goo.gl/tSQBMEk8cV1AhiEg6"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <div>60 N Recker Road</div>
-                  <div>Gilbert, Arizona 85234</div>
-                </a>
-              </li>
             </ul>
+            <div className="mt-12 mb-3">
+              <a
+                className="hover:underline"
+                href="https://maps.app.goo.gl/tSQBMEk8cV1AhiEg6"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <div>60 N Recker Road</div>
+                <div>Gilbert, Arizona 85234</div>
+              </a>
+            </div>
           </div>
         </div>
       </div>
       <div className="mb-6 mx-6">
-        <div className="text-center text-xs">
-          Copyright © {new Date().getFullYear()} Gateway Fellowship. All rights
-          reserved.
-          <p className="mb-3">
-            Created by{" "}
-            <a
-              className="hover:underline"
-              href="https://marktkimball.github.io/"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              MK Engineering
-            </a>
-          </p>
-        </div>
         <div className="flex justify-end">
           <a
             className="p-4 cursor-pointer"
@@ -140,6 +140,21 @@ export const Footer = async () => {
               height={24}
             />
           </a>
+        </div>
+        <div className="text-center text-xs">
+          Copyright © {new Date().getFullYear()} Gateway Fellowship. All rights
+          reserved.
+          <p className="mb-3">
+            Created by{" "}
+            <a
+              className="hover:underline"
+              href="https://marktkimball.github.io/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              MK Engineering
+            </a>
+          </p>
         </div>
       </div>
     </footer>

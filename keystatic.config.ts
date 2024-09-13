@@ -204,6 +204,28 @@ export default config({
         ),
       },
     }),
+    ministries: singleton({
+      label: "Ministries",
+      schema: {
+        content: fields.array(
+          fields.object({
+            title: fields.text({
+              label: "Ministry Name",
+              validation: { isRequired: true },
+            }),
+            description: fields.text({
+              label: "Ministry Description",
+              multiline: true,
+              validation: { isRequired: true },
+            }),
+          }),
+          {
+            label: "Ministry",
+            itemLabel: (props) => props.fields.title.value,
+          }
+        ),
+      },
+    }),
     sermons: singleton({
       label: "Sermons",
       schema: {
@@ -249,38 +271,29 @@ export default config({
               label: "Day of the week (Sundays, Wednesdays, etc.)",
               validation: { isRequired: true },
             }),
-            time: fields.text({
-              label: "Time(s) of day (i.e. 10am & 6pm or a single time of day)",
-              validation: { isRequired: true },
-            }),
+            serviceTypes: fields.array(
+              fields.object({
+                name: fields.text({
+                  label: "Name of service",
+                  validation: { isRequired: true },
+                }),
+                time: fields.text({
+                  label:
+                    "Time(s) of day (i.e. 10am & 6pm or a single time of day)",
+                  validation: { isRequired: true },
+                }),
+              }),
+              {
+                label: "Service Types",
+                itemLabel: (props) => props.fields.name.value,
+              }
+            ),
           }),
           {
             label: "Services",
             itemLabel: (props) => props.fields.dayOfWeek.value,
           }
         ),
-      },
-    }),
-    announcement: singleton({
-      label: "Announcement",
-      schema: {
-        title: fields.text({
-          label: "Announcement Title",
-          validation: { isRequired: false },
-        }),
-        description: fields.text({
-          label: "Announcement Description",
-          validation: { isRequired: true },
-        }),
-        link: fields.url({
-          label: "Link/url to the page/site you want to send visitors to",
-          validation: { isRequired: false },
-        }),
-        linkText: fields.text({
-          label:
-            "Text for the button in the announcement if you include a link",
-          validation: { isRequired: false },
-        }),
       },
     }),
   },

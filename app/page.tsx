@@ -18,18 +18,18 @@ export default async function Home() {
 
   return (
     <section>
-      <div className="rounded-3xl mx-4 mb-12 mt-0 p-4 sm:p-12 bg-[linear-gradient(to_right,_#434343_0%,_#000_100%)]">
+      <div className="rounded-3xl mx-4 mb-12 mt-0 sm:p-12 bg-[linear-gradient(to_right,_#434343_0%,_#000_100%)]">
         <div
           className={`${poppinsBold.className} small-caps flex flex-col md:flex-row justify-center items-center font-extrabold text-text-dark w-full z-10`}
         >
           <Image
-            className="basis-1/2 shrink h-auto w-auto min-w-0"
+            className="shrink h-auto w-auto min-w-0"
             alt="Gateway Fellowship Symbol"
             src="/White_Circle_Text.png"
             height={600}
             width={600}
           />
-          <h1 className="basis-1/2 min-w-0 text-4xl md:text-6xl sm:ml-8 text-left leading-relaxed sm:leading-relaxed md:leading-relaxed tracking-wide">
+          <h1 className="md:basis-1/2 min-w-0 text-4xl p-12 sm:p-0 md:text-6xl md:ml-8 text-left leading-relaxed sm:leading-relaxed md:leading-relaxed tracking-wide">
             {page.title}
           </h1>
         </div>

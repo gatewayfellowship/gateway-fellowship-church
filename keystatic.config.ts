@@ -204,6 +204,38 @@ export default config({
         ),
       },
     }),
+    welcomeItems: singleton({
+      label: "Home Page Welcome Items",
+      schema: {
+        title: fields.text({
+          label: "Welcome section title",
+          validation: { isRequired: true },
+        }),
+        content: fields.array(
+          fields.object({
+            title: fields.text({
+              label: "Title",
+              validation: { isRequired: true },
+            }),
+            description: fields.text({
+              label: "Description",
+              multiline: true,
+              validation: { isRequired: true },
+            }),
+            image: fields.image({
+              label: "Welcome Item Image",
+              directory: "public/images/welcomeItems",
+              publicPath: "/images/welcomeItems/",
+              validation: { isRequired: true },
+            }),
+          }),
+          {
+            label: "What to Expect",
+            itemLabel: (props) => props.fields.title.value,
+          }
+        ),
+      },
+    }),
     ministries: singleton({
       label: "Ministries",
       schema: {

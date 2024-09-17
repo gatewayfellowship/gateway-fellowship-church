@@ -110,7 +110,7 @@ export const Navbar = () => {
                       Staff
                     </Link>
                     <Link
-                      href="/about"
+                      href="/history"
                       className="block px-4 py-2 text-base hover:text-primary-300"
                       role="menuitem"
                       tabIndex={-1}
@@ -208,7 +208,7 @@ export const Navbar = () => {
                     </Link>
                     <Link
                       onClick={() => setIsOpen(false)}
-                      href="/about"
+                      href="/history"
                       className={`${mobileLinkClasses} text-base pl-8`}
                     >
                       Our History

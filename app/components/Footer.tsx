@@ -29,23 +29,23 @@ export const Footer = async () => {
             </h4>
             <ul>
               <li className="mb-3 text-text-light dark:text-text-dark">
-                <Link className="hover:underline" href="/about">
-                  Our Beliefs
+                <Link className="hover:underline" href="/beliefs">
+                  Beliefs
                 </Link>
               </li>
               <li className="mb-3 text-text-light dark:text-text-dark">
-                <Link className="hover:underline" href="/about">
+                <Link className="hover:underline" href="/staff">
+                  Staff
+                </Link>
+              </li>
+              <li className="mb-3 text-text-light dark:text-text-dark">
+                <Link className="hover:underline" href="/history">
                   Our History
                 </Link>
               </li>
               <li className="mb-3 text-text-light dark:text-text-dark">
-                <Link className="hover:underline" href="/about">
-                  Missions
-                </Link>
-              </li>
-              <li className="mb-3 text-text-light dark:text-text-dark">
-                <Link className="hover:underline" href="/about">
-                  Leadership
+                <Link className="hover:underline" href="/ministries">
+                  Ministries
                 </Link>
               </li>
             </ul>

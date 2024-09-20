@@ -1,11 +1,9 @@
+title: Gospel Partnership
+imageSrc: /images/sermonSeries/imageSrc.png
+startDate: 2024-08-04
 content:
   - title: Thank You
-    description: Philippians 1:1-2
+    description: Philippians 1:1-2 - Beginning our new series in Philippians
     speaker: Cody Bishop
-    file: /files/sermons/sermon/0/file.mp3
+    file: /files/sermons/content/0/file.mp3
     date: 2024-08-04
-  - title: The Church and Her Elders
-    description: 1 Peter 5:1-5 - Installation Service
-    speaker: Cody Bishop
-    file: /files/sermons/sermon/1/file.mp3
-    date: 2024-08-11

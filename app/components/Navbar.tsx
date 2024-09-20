@@ -22,7 +22,7 @@ export const Navbar = () => {
       <header id="header-nav" className="sticky top-0 left-0 right-0 z-30 mb-8">
         <nav
           id="app-nav"
-          className="flex items-center justify-between p-6 bg-stone-900 rounded-b-3xl shadow-md shadow-stone-600 dark:shadow-stone-700"
+          className="flex items-center justify-between p-6 bg-zinc-800 dark:bg-zinc-900 rounded-b-3xl shadow-md shadow-zinc-600 dark:shadow-zinc-700"
           aria-label="Global"
         >
           <div className="flex lg:flex-1">
@@ -75,12 +75,12 @@ export const Navbar = () => {
               onMouseEnter={toggleShowAboutDropdown}
               onMouseLeave={toggleShowAboutDropdown}
             >
-              <Link href="/about" className={`${linkClasses} p-4`}>
+              <Link href="/beliefs" className={`${linkClasses} p-4`}>
                 About Us
               </Link>
               {
                 <div
-                  className={`absolute right-0 mt-2 z-10 w-56 origin-top-right rounded-md text-text-dark bg-stone-800 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none transition ease-out duration-300 ${
+                  className={`absolute right-0 mt-2 z-10 w-56 origin-top-right rounded-md text-text-dark bg-zinc-800 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none transition ease-out duration-300 ${
                     showAboutDropdown
                       ? "transform opacity-100 scale-100"
                       : "transform opacity-0 scale-95"
@@ -140,7 +140,7 @@ export const Navbar = () => {
       {isOpen && (
         <div className="lg:hidden" role="dialog" aria-modal="true">
           <div className="fixed inset-0 z-50"></div>
-          <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-stone-900 px-6 py-6 sm:max-w-sm shadow-md shadow-stone-600 dark:shadow-stone-700">
+          <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-zinc-900 px-6 py-6 sm:max-w-sm shadow-md shadow-zinc-600 dark:shadow-zinc-700">
             <div className="flex items-center justify-between">
               <Link
                 onClick={() => setIsOpen(false)}

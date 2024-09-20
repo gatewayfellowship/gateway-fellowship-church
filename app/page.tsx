@@ -10,7 +10,7 @@ const poppinsBold = Poppins({ weight: "700", subsets: ["latin"] });
 export default async function Home() {
   const page = await reader.collections.pages.read("homepage");
   const distinctives = await reader.singletons.distinctives.read();
-  const currentSermon = await reader.singletons.sermonSeries.read();
+  const currentSermon = await reader.singletons.currentSeries.read();
   const welcomeItems = await reader.singletons.welcomeItems.read();
 
   if (!page) {
@@ -39,13 +39,13 @@ export default async function Home() {
         {welcomeItems && (
           <div>
             <h3 className="text-5xl text-accent-600 dark:text-accent-300 mb-16 small-caps">
-              Welcome to Gateway Fellowship
+              {welcomeItems.title}
             </h3>
             <div className="pt-8 pb-0 sm:py-8">
               {welcomeItems?.content.map((item, index) => (
                 <div
                   key={item.title}
-                  className={`flex justify-center mb-16 sm:mb-24 md:mb-48 flex-col-reverse md:flex-row ${
+                  className={`flex justify-center mb-16 sm:mb-24 md:mb-48 last-of-type:mb-0 flex-col-reverse md:flex-row ${
                     index % 2 === 0 ? "" : "md:flex-row-reverse"
                   }`}
                 >
@@ -57,12 +57,12 @@ export default async function Home() {
                     <h4 className="text-4xl italic mb-8 font-bold">
                       {item.title}
                     </h4>
-                    <p className="max-w-md text-xl text-stone-800">
+                    <p className="sm:max-w-md text-xl text-zinc-800 dark:text-zinc-400">
                       {item.description}
                     </p>
                   </div>
                   <Image
-                    className="rounded-2xl shrink h-auto w-auto min-w-0"
+                    className="rounded-2xl shrink w-auto aspect-video md:aspect-[4/3] lg:aspect-[5/3] object-cover min-w-0"
                     src={item.image}
                     height={300}
                     width={500}
@@ -106,7 +106,7 @@ export default async function Home() {
                 {distinctives?.content.map((value, index) => (
                   <div
                     key={index}
-                    className="flex flex-col mb-8 md:mb-0 md:basis-80 flex-shrink-0 font-bold p-6 rounded-xl bg-stone-100 dark:bg-stone-800"
+                    className="flex flex-col mb-8 md:mb-0 md:basis-80 flex-shrink-0 font-bold p-6 rounded-xl bg-zinc-100 dark:bg-zinc-800"
                   >
                     <h4
                       className={`${poppins.className} text-4xl text-accent-600 dark:text-accent-300 mb-10`}

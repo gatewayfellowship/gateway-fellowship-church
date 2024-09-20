@@ -1,15 +1,15 @@
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 import reader from "../keystatic/reader";
-import { Source_Serif_4 } from "next/font/google";
 import { Jumbotron } from "../components/Jumbotron";
-import { formatDate } from "../utils/date";
 import { ContentContainer } from "../components/ContentContainer";
 import { ButtonLink } from "../components/ButtonLink";
-
-const sourceSerif = Source_Serif_4({ weight: "700", subsets: ["latin"] });
+import { Subtitle } from "../components/Subtitle";
 
 export default async function Sermons() {
   const page = await reader.collections.pages.read("sermons");
-  const sermons = await reader.singletons.sermons.read();
+  const sermonSeries = await reader.collections.sermonSeries.all();
 
   if (!page) {
     return "LOADING...";
@@ -29,51 +29,29 @@ export default async function Sermons() {
         text="Watch on YouTube"
         to="https://www.youtube.com/@gatewayfellowshipsbc8663"
       />
-      {sermons && (
+      {sermonSeries && (
         <ContentContainer>
-          {sermons.content
-            .toSorted((a, z) => {
-              if (a.date >= z.date) {
-                return -1;
-              }
-
-              if (a.date <= z.date) {
-                return 1;
-              }
-
-              return 0;
-            })
-            .map((sermon) => (
-              <div
-                key={sermon.title}
-                className="grid sm:grid-cols-3 grid-cols-1 mb-8 border-t pt-4 first:border-0 border-text-light dark:border-text-dark"
+          <section className="grid gap-10 justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            {sermonSeries.map((series) => (
+              <Link
+                key={series.slug}
+                href={`/sermons/${encodeURIComponent(series.slug)}`}
+                className="cursor-pointer w-full"
               >
-                <div className="mb-8 sm:mb-0">
-                  <h2 className={`${sourceSerif.className} text-2xl mb-2`}>
-                    {sermon.title}
-                  </h2>
-                  <p className="text-sm mb-2">{sermon.description}</p>
-                  <p className="text-sm">{sermon.speaker}</p>
-                </div>
-                <p className="sm:text-center hidden sm:block">
-                  {formatDate(sermon.date, false)}
-                </p>
-                <a
-                  className="ml-auto hover:underline hidden sm:block"
-                  href={sermon.file}
-                >
-                  Download
-                </a>
-                <div className="sm:hidden flex flex-row">
-                  <p className="sm:text-center">
-                    {formatDate(sermon.date, false)}
-                  </p>
-                  <a className="ml-auto hover:underline" href={sermon.file}>
-                    Download
-                  </a>
-                </div>
-              </div>
+                <Image
+                  className="shadow-md rounded-xl mb-8 dark:shadow-zinc-700 object-cover w-full aspect-video hover:shadow-lg dark:hover:shadow-zinc-700 transition-shadow"
+                  src={series.entry.imageSrc || "/bible-placeholder.jpg"}
+                  width={400}
+                  height={250}
+                  alt="current-sermon-series"
+                />
+                <Subtitle
+                  text={series.entry.title}
+                  className="hover:underline"
+                />
+              </Link>
             ))}
+          </section>
         </ContentContainer>
       )}
     </main>

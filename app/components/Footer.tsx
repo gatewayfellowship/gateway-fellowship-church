@@ -11,11 +11,10 @@ export const Footer = async () => {
   const services = await reader.singletons.services.read();
 
   return (
-    <footer className="py-12 px-4 bg-gradient-to-r from-stone-50 to-stone-200 dark:from-stone-800 dark:to-stone-900 border-t-stone-100 dark:border-t-stone-900 border-t rounded-t-3xl">
+    <footer className="py-12 px-4 bg-gradient-to-r from-zinc-600 dark:from-zinc-700 to-zinc-800 dark:to-zinc-800 border-t-zinc-900 border-t rounded-t-3xl">
       <div className="mb-6 flex items-center justify-center">
         <Image
-          className="dark:invert"
-          src="/Black_Text_Between.png"
+          src="/White_Text_Between.png"
           alt="Gateway Fellowship"
           width={400}
           height={100}
@@ -24,26 +23,24 @@ export const Footer = async () => {
       <div className="mb-6">
         <div className="flex flex-col md:flex-row justify-evenly w-full">
           <div className="mb-6">
-            <h4 className="text-accent-500 dark:text-accent-200 text-2xl mb-6 font-bold">
-              About
-            </h4>
+            <h4 className="text-accent-400 text-2xl mb-6 font-bold">About</h4>
             <ul>
-              <li className="mb-3 text-text-light dark:text-text-dark">
+              <li className="mb-3 text-text-dark">
                 <Link className="hover:underline" href="/beliefs">
                   Beliefs
                 </Link>
               </li>
-              <li className="mb-3 text-text-light dark:text-text-dark">
+              <li className="mb-3 text-text-dark">
                 <Link className="hover:underline" href="/staff">
                   Staff
                 </Link>
               </li>
-              <li className="mb-3 text-text-light dark:text-text-dark">
+              <li className="mb-3 text-text-dark">
                 <Link className="hover:underline" href="/history">
                   Our History
                 </Link>
               </li>
-              <li className="mb-3 text-text-light dark:text-text-dark">
+              <li className="mb-3 text-text-dark">
                 <Link className="hover:underline" href="/ministries">
                   Ministries
                 </Link>
@@ -51,10 +48,8 @@ export const Footer = async () => {
             </ul>
           </div>
           <div className="mb-6">
-            <h4 className="text-accent-500 dark:text-accent-200 text-2xl mb-6 font-bold">
-              Contact
-            </h4>
-            <ul>
+            <h4 className="text-accent-400 text-2xl mb-6 font-bold">Contact</h4>
+            <ul className="text-text-dark">
               <li className="mb-3">
                 phone:{" "}
                 <a className="hover:underline" href="tel:4808924711">
@@ -73,10 +68,8 @@ export const Footer = async () => {
             </ul>
           </div>
           <div className="mb-6">
-            <h4 className="text-accent-500 dark:text-accent-200 text-2xl mb-6 font-bold">
-              Visit
-            </h4>
-            <ul>
+            <h4 className="text-accent-400 text-2xl mb-6 font-bold">Visit</h4>
+            <ul className="text-text-dark">
               {services?.content?.map((service, index) => (
                 <li
                   key={`${service.dayOfWeek}-${index}`}
@@ -94,7 +87,7 @@ export const Footer = async () => {
                 </li>
               ))}
             </ul>
-            <div className="mt-12 mb-3">
+            <div className="mt-12 mb-3 text-text-dark">
               <a
                 className="hover:underline"
                 href="https://maps.app.goo.gl/tSQBMEk8cV1AhiEg6"
@@ -118,7 +111,7 @@ export const Footer = async () => {
             target="_blank"
           >
             <Image
-              className="dark:invert"
+              className="invert"
               src="/social/facebook.svg"
               alt="Facebook"
               width={24}
@@ -133,7 +126,7 @@ export const Footer = async () => {
             target="_blank"
           >
             <Image
-              className="dark:invert"
+              className="invert"
               src="/social/youtube.svg"
               alt="YouTube"
               width={24}
@@ -141,7 +134,7 @@ export const Footer = async () => {
             />
           </a>
         </div>
-        <div className="text-center text-xs">
+        <div className="text-center text-xs text-text-dark">
           Copyright © {new Date().getFullYear()} Gateway Fellowship. All rights
           reserved.
           <p className="mb-3">

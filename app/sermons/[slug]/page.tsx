@@ -8,6 +8,14 @@ import reader from "../../keystatic/reader";
 
 const poppinsBold = Poppins({ weight: "700", subsets: ["latin"] });
 
+export async function generateStaticParams() {
+  const sermonSeries = await reader.collections.sermonSeries.all();
+
+  return sermonSeries.map((series) => ({
+    slug: series.slug,
+  }));
+}
+
 export default async function EventDetails({
   params: { slug },
 }: {

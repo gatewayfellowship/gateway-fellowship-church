@@ -19,22 +19,45 @@ export default async function Home() {
 
   return (
     <section>
-      <div className="rounded-3xl mx-4 mb-12 mt-0 sm:p-12 bg-[linear-gradient(to_right,_#434343_0%,_#000_100%)]">
-        <div
-          className={`${poppinsBold.className} small-caps flex flex-col md:flex-row justify-center items-center font-extrabold text-text-dark w-full z-10`}
-        >
+      <div className="mx-4 mb-12 mt-0">
+        <div className="relative rounded-3xl overflow-hidden w-full h-full">
+          <video
+            playsInline
+            autoPlay
+            muted
+            loop
+            poster="/Gilbert_drone.jpg"
+            className="hidden sm:block object-fill w-full h-full"
+          >
+            <source src="/Gateway_Loop.mp4" type="video/mp4" />
+          </video>
           <Image
-            className="shrink h-auto w-auto min-w-0"
-            alt="Gateway Fellowship Symbol"
-            src="/White_Circle_Text.png"
-            height={600}
+            src="/Church_Front.jpg"
+            height={400}
             width={600}
+            alt="Gateway Fellowship Church"
+            className="block sm:hidden"
           />
-          <h1 className="md:basis-1/2 min-w-0 text-4xl p-12 sm:p-0 md:text-6xl md:ml-8 text-left leading-relaxed sm:leading-relaxed md:leading-relaxed tracking-wide">
-            {page.title}
-          </h1>
+          <div
+            className={`${poppinsBold.className} bg-opacity-30 bg-black absolute sm:p-12 top-0 left-0 right-0 bottom-0 small-caps flex flex-col md:flex-row justify-center items-center font-extrabold text-text-dark w-full z-10`}
+          >
+            <Image
+              className="shrink h-auto w-auto max-h-full sm:max-h-[150%] min-w-0"
+              alt="Gateway Fellowship Symbol"
+              src="/White_Circle_Text.png"
+              height={600}
+              width={600}
+            />
+            <h1 className="hidden md:block md:basis-1/2 min-w-0 p-12 sm:p-0 text-4xl md:text-5xl lg:text-6xl md:ml-8 text-left leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed tracking-wide">
+              {page.title}
+            </h1>
+          </div>
         </div>
       </div>
+      <h1 className="font-extrabold mx-4 my-12 text-center md:hidden text-4xl leading-relaxed tracking-wide">
+        {page.title}
+      </h1>
+      <hr className="md:hidden my-12 mx-24 border-secondary-200" />
       <ContentContainer>
         {welcomeItems && (
           <div>

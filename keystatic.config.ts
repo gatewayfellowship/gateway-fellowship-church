@@ -3,11 +3,7 @@ import { config, fields, collection, singleton } from "@keystatic/core";
 
 export default config({
   storage: {
-    kind: "github",
-    repo: {
-      owner: "gatewayfellowship",
-      name: "gateway-fellowship-church",
-    },
+    kind: "local",
   },
   collections: {
     pages: collection({

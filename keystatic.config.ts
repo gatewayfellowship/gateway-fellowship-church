@@ -16,10 +16,6 @@ export default config({
           label: "Title",
           validation: { isRequired: true },
         }),
-        subtitle: fields.text({
-          label: "Subtitle",
-          validation: { isRequired: false },
-        }),
         content: fields.markdoc({ label: "Page Content" }),
         imageSrc: fields.image({
           label: "Image",
@@ -198,32 +194,6 @@ export default config({
           }),
           {
             label: "Things to Know",
-            itemLabel: (props) => props.fields.title.value,
-          }
-        ),
-      },
-    }),
-    whatToExpect: singleton({
-      label: "What to Expect",
-      schema: {
-        title: fields.text({
-          label: "What to Expect section title",
-          validation: { isRequired: true },
-        }),
-        content: fields.array(
-          fields.object({
-            title: fields.text({
-              label: "Title",
-              validation: { isRequired: true },
-            }),
-            description: fields.text({
-              label: "Description",
-              multiline: true,
-              validation: { isRequired: true },
-            }),
-          }),
-          {
-            label: "What to Expect",
             itemLabel: (props) => props.fields.title.value,
           }
         ),

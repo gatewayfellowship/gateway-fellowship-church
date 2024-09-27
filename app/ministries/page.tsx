@@ -11,14 +11,11 @@ export default async function Ministries() {
   if (!page) {
     return "LOADING...";
   }
+  console.info("MIN:", ministries);
 
   return (
     <main>
-      <Jumbotron
-        title={page.title}
-        subtitle={page.subtitle}
-        imageSrc={page.imageSrc}
-      />
+      <Jumbotron title={page.title} imageSrc={page.imageSrc} />
       <ContentContainer>
         <div className="my-36">
           {ministries && (
@@ -26,7 +23,7 @@ export default async function Ministries() {
               {ministries.content.map((item) => (
                 <div key={item.title} className="mb-12">
                   <Subtitle text={item.title} />
-                  <p>{item.description}</p>
+                  <p className="whitespace-pre-line">{item.description}</p>
                 </div>
               ))}
             </div>

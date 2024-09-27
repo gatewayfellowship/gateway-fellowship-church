@@ -7,7 +7,6 @@ import { Subtitle } from "../components/Subtitle";
 export default async function ImNew() {
   const page = await reader.collections.pages.read("new");
   const services = await reader.singletons.services.read();
-  const whatToExpectItems = await reader.singletons.whatToExpect.read();
   const thingsToKnowItems = await reader.singletons.thingsToKnow.read();
 
   if (!page) {
@@ -16,11 +15,7 @@ export default async function ImNew() {
 
   return (
     <main>
-      <Jumbotron
-        title={page.title}
-        subtitle={page.subtitle}
-        imageSrc={page.imageSrc}
-      />
+      <Jumbotron title={page.title} imageSrc={page.imageSrc} />
       <ContentContainer>
         <div className="mt-24 mb-36">
           <Title text="Service Times" />
@@ -39,26 +34,13 @@ export default async function ImNew() {
           ))}
         </div>
         <div className="my-36">
-          {whatToExpectItems && (
-            <div className="my-24">
-              <Title text={whatToExpectItems.title} />
-              {whatToExpectItems.content.map((item) => (
-                <div key={item.title} className="mb-12">
-                  <Subtitle text={item.title} />
-                  <p>{item.description}</p>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-        <div className="my-36">
           {thingsToKnowItems && (
             <div className="my-24">
               <Title text={thingsToKnowItems.title} />
               {thingsToKnowItems.content.map((item) => (
                 <div key={item.title} className="mb-12">
                   <Subtitle text={item.title} />
-                  <p>{item.description}</p>
+                  <p className="whitespace-pre-line">{item.description}</p>
                 </div>
               ))}
             </div>

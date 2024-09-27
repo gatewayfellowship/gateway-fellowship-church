@@ -20,11 +20,7 @@ export default async function Give() {
 
   return (
     <main>
-      <Jumbotron
-        title={page.title}
-        subtitle={page.subtitle}
-        imageSrc={page.imageSrc}
-      />
+      <Jumbotron title={page.title} imageSrc={page.imageSrc} />
       <ContentContainer>
         {Markdoc.renderers.react(renderable, React)}
         <div className="flex justify-center my-16">

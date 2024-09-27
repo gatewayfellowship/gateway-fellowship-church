@@ -98,7 +98,7 @@ export const Navbar = () => {
                       tabIndex={-1}
                       id="menu-item-0"
                     >
-                      Beliefs
+                      Our Beliefs
                     </Link>
                     <Link
                       href="/staff"
@@ -107,7 +107,7 @@ export const Navbar = () => {
                       tabIndex={-1}
                       id="menu-item-1"
                     >
-                      Staff
+                      Our Staff
                     </Link>
                     <Link
                       href="/history"
@@ -197,14 +197,14 @@ export const Navbar = () => {
                       href="/beliefs"
                       className={`${mobileLinkClasses} text-base pl-8`}
                     >
-                      Beliefs
+                      Our Beliefs
                     </Link>
                     <Link
                       onClick={() => setIsOpen(false)}
                       href="/staff"
                       className={`${mobileLinkClasses} text-base pl-8`}
                     >
-                      Staff
+                      Our Staff
                     </Link>
                     <Link
                       onClick={() => setIsOpen(false)}

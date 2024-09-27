@@ -27,17 +27,10 @@ export default async function Home() {
             muted
             loop
             poster="/Gilbert_drone.jpg"
-            className="hidden sm:block object-fill w-full h-full"
+            className="object-fill w-full h-full"
           >
             <source src="/Gateway_Loop.mp4" type="video/mp4" />
           </video>
-          <Image
-            src="/Church_Front.jpg"
-            height={400}
-            width={600}
-            alt="Gateway Fellowship Church"
-            className="block sm:hidden"
-          />
           <div
             className={`${poppinsBold.className} bg-opacity-30 bg-black absolute sm:p-12 top-0 left-0 right-0 bottom-0 small-caps flex flex-col md:flex-row justify-center items-center font-extrabold text-text-dark w-full z-10`}
           >
@@ -80,7 +73,7 @@ export default async function Home() {
                     <h4 className="text-4xl italic mb-8 font-bold">
                       {item.title}
                     </h4>
-                    <p className="sm:max-w-md text-xl text-zinc-800 dark:text-zinc-400">
+                    <p className="sm:max-w-md text-xl text-zinc-800 dark:text-zinc-400 whitespace-pre-line">
                       {item.description}
                     </p>
                   </div>

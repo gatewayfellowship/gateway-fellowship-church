@@ -14,11 +14,7 @@ export default async function Beliefs() {
 
   return (
     <main>
-      <Jumbotron
-        title={page.title}
-        subtitle={page.subtitle}
-        imageSrc={page.imageSrc}
-      />
+      <Jumbotron title={page.title} imageSrc={page.imageSrc} />
       <ContentContainer>
         {beliefs && (
           <div className="my-12">

@@ -130,10 +130,6 @@ export default config({
             position: fields.text({
               label: "Position/role",
             }),
-            bio: fields.text({
-              label: "Bio",
-              multiline: true,
-            }),
             photoSrc: fields.image({
               label: "Photo",
               directory: "public/images/leadership",

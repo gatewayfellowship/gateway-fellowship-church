@@ -39,7 +39,6 @@ export default async function Staff() {
                   />
                   <div className="mb-4 text-2xl font-bold">{leader.name}</div>
                   <div className="mb-4">{leader.position}</div>
-                  <div className="mb-4">{leader.bio}</div>
                 </div>
               ))}
             </div>

@@ -11,7 +11,6 @@ export default async function Ministries() {
   if (!page) {
     return "LOADING...";
   }
-  console.info("MIN:", ministries);
 
   return (
     <main>

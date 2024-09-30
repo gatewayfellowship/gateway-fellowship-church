@@ -9,5 +9,5 @@ content:
         time: 10:00am
   - dayOfWeek: Wednesdays
     serviceTypes:
-      - name: Worship
-        time: '6:30'
+      - name: Discipleship
+        time: 6:30-8pm

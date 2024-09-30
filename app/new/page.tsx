@@ -19,19 +19,26 @@ export default async function ImNew() {
       <ContentContainer>
         <div className="mt-24 mb-36">
           <Title text="Service Times" />
-          {services?.content?.map((service, index) => (
-            <div
-              key={`${service.dayOfWeek}-${index}`}
-              className="text-center mb-12 last:mb-0"
-            >
-              <Subtitle text={service.dayOfWeek} />
-              {service.serviceTypes.map((serviceType) => (
-                <div key={serviceType.name} className="text-lg mb-4">
-                  {serviceType.name} at {serviceType.time}
-                </div>
-              ))}
-            </div>
-          ))}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
+            {services?.content?.map((service, index) => (
+              <div
+                key={`${service.dayOfWeek}-${index}`}
+                className="mb-12 last:mb-0"
+              >
+                <Subtitle text={service.dayOfWeek} />
+                {service.serviceTypes.map(({ name, time, description }) => (
+                  <div key={name} className="text-lg mb-4">
+                    <p>
+                      {name} at {time}
+                    </p>
+                    {description && (
+                      <p className="whitespace-pre-wrap mt-8">{description}</p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
         <div className="my-36">
           {thingsToKnowItems && (

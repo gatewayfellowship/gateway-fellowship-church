@@ -4,7 +4,7 @@ const poppins = Poppins({ weight: "700", subsets: ["latin"] });
 
 export const Subtitle = ({
   text,
-  className,
+  className = "",
 }: {
   text: string;
   className?: string;

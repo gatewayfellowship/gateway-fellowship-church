@@ -25,6 +25,13 @@ body {
   }
 }
 
+.kui-theme {
+  #header-nav,
+  footer {
+    display: none;
+  }
+}
+
 .small-caps {
   font-variant: small-caps;
 }

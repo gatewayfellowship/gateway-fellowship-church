@@ -1,35 +1,40 @@
 import React from "react";
-import Markdoc from "@markdoc/markdoc";
 import reader from "../keystatic/reader";
-import { Anton } from "next/font/google";
 import { Jumbotron } from "../components/Jumbotron";
 import { ContentContainer } from "../components/ContentContainer";
 import { ButtonLink } from "../components/ButtonLink";
-
-const anton = Anton({ weight: "400", subsets: ["latin"] });
+import { Subtitle } from "../components/Subtitle";
 
 export default async function Give() {
   const page = await reader.collections.pages.read("give");
+  const givingOptions = await reader.singletons.giveOptions.read();
 
   if (!page) {
     return "LOADING...";
   }
 
-  const { node } = await page.content();
-  const renderable = Markdoc.transform(node);
-
   return (
     <main>
       <Jumbotron title={page.title} imageSrc={page.imageSrc} />
       <ContentContainer>
-        {Markdoc.renderers.react(renderable, React)}
-        <div className="flex justify-center my-16">
-          <ButtonLink
-            isExternal
-            primary
-            text="Give"
-            to="https://pushpay.com/g/gatewayfellowship?src=hpp"
-          />
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 my-16">
+          {givingOptions?.content.map((giveOption) => (
+            <div key={giveOption.title}>
+              <Subtitle text={giveOption.title} />
+              <p className="whitespace-pre-wrap mb-8">
+                {giveOption.description}
+              </p>
+              {giveOption.url && (
+                <ButtonLink
+                  isExternal
+                  primary={giveOption.isPreferred}
+                  text="Give"
+                  className="inline-block"
+                  to={giveOption.url}
+                />
+              )}
+            </div>
+          ))}
         </div>
       </ContentContainer>
     </main>

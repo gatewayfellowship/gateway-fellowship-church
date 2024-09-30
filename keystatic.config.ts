@@ -272,6 +272,10 @@ export default config({
                     "Time(s) of day (i.e. 10am & 6pm or a single time of day)",
                   validation: { isRequired: true },
                 }),
+                description: fields.text({
+                  label: "(optional) Further information about this service",
+                  multiline: true,
+                }),
               }),
               {
                 label: "Service Types",
@@ -282,6 +286,35 @@ export default config({
           {
             label: "Services",
             itemLabel: (props) => props.fields.dayOfWeek.value,
+          }
+        ),
+      },
+    }),
+    giveOptions: singleton({
+      label: "Giving Options",
+      schema: {
+        content: fields.array(
+          fields.object({
+            title: fields.text({
+              label: "Giving Option Name",
+              validation: { isRequired: true },
+            }),
+            description: fields.text({
+              label: "Giving Option Instructions",
+              multiline: true,
+              validation: { isRequired: true },
+            }),
+            url: fields.url({
+              label: "URL",
+              description: "The giving site URL",
+            }),
+            isPreferred: fields.checkbox({
+              label: "Is the preferred giving option?",
+            }),
+          }),
+          {
+            label: "Giving Option",
+            itemLabel: (props) => props.fields.title.value,
           }
         ),
       },

@@ -1,8 +1,4 @@
 content:
-  - title: Men's Ministry
-    description: Here's some information about the Men's ministry
-  - title: Women's Ministry
-    description: Here's some information about the women's ministry
   - title: Children's Ministry
     description: >-
       At Gateway Kids, we are passionate about training up the next generation
@@ -29,5 +25,13 @@ content:
       would love for you to join us on Sunday mornings and Wednesday nights as
       our middle and high schoolers meet to dive into God's Word, play games,
       and build relationships with one another.
+  - title: Men's Ministry
+    description: >-
+      Gateway Men meet one Saturday morning each month for breakfast,
+      fellowship, and some encouraging teaching. Our men strive to love and know
+      Jesus more and to practically live that out at home, at Gateway, and in
+      their communities.
+  - title: Women's Ministry
+    description: Here's some information about the women's ministry
   - title: Bible Studies
     description: Here's some information about Bible studies at the church

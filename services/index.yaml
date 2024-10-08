@@ -12,7 +12,7 @@ content:
   - dayOfWeek: Wednesdays
     serviceTypes:
       - name: Discipleship
-        time: 6:30-8pm
+        time: 6:30-8:00pm
         description: |
           Child care provided
 

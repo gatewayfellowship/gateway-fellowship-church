@@ -105,6 +105,21 @@ export const Footer = async () => {
         <div className="flex justify-end">
           <a
             className="p-4 cursor-pointer"
+            title="instagram"
+            href="https://www.instagram.com/gatewayfellowshipaz"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <Image
+              className="invert"
+              src="/social/instagram.svg"
+              alt="Instagram"
+              width={24}
+              height={24}
+            />
+          </a>
+          <a
+            className="p-4 cursor-pointer"
             title="facebook"
             href="https://www.facebook.com/profile.php?id=100064455289156"
             rel="noopener noreferrer"

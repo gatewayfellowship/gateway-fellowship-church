@@ -7,6 +7,8 @@ content:
         time: 9:30am
       - name: Service
         time: 10:00am
+      - name: Awana Club
+        time: 4:00-6:00pm
   - dayOfWeek: Wednesdays
     serviceTypes:
       - name: Discipleship
@@ -14,8 +16,6 @@ content:
         description: |
           Child care provided
 
-          - Equip Course (Adults)
+          - Equip Course (All Ages)
           - Team Kids (1-6 grade)
           - Student Ministry (7-12 grade)
-      - name: Awana Club
-        time: 6:00pm

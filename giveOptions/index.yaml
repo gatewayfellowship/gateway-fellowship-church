@@ -16,6 +16,3 @@ content:
       Pushpay.
     url: https://pushpay.com/g/gatewayfellowship
     isPreferred: false
-  - title: Cash or Check in Person
-    description: ' '
-    isPreferred: false

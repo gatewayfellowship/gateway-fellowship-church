@@ -1,4 +1,9 @@
 content:
+  - title: Zelle
+    description: >-
+      Giving through Zelle takes place directly with your bank/ banking app. The
+      email to give via zelle is give@gatewayfellowship.org
+    isPreferred: true
   - title: Pushpay
     description: >-
       1. From your smart phone you can text “gfsbc” to 77977 and you’ll receive
@@ -10,5 +15,7 @@ content:
       3. Click the button below to be taking directly to our giving page on
       Pushpay.
     url: https://pushpay.com/g/gatewayfellowship
-  - title: Zelle
-    description: Zelle coming soon...
+    isPreferred: false
+  - title: Cash or Check in Person
+    description: ' '
+    isPreferred: false

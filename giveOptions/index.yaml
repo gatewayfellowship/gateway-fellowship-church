@@ -3,6 +3,7 @@ content:
     description: >-
       Giving through Zelle takes place directly with your bank/ banking app. The
       email to give via zelle is give@gatewayfellowship.org
+    url: https://www.zellepay.com/get-started
     isPreferred: true
   - title: Pushpay
     description: >-

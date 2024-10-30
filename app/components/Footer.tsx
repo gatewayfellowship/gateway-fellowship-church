@@ -114,8 +114,8 @@ export const Footer = async () => {
               className="invert"
               src="/social/instagram.svg"
               alt="Instagram"
-              width={24}
-              height={24}
+              width={40}
+              height={40}
             />
           </a>
           <a
@@ -129,8 +129,8 @@ export const Footer = async () => {
               className="invert"
               src="/social/facebook.svg"
               alt="Facebook"
-              width={24}
-              height={24}
+              width={40}
+              height={40}
             />
           </a>
           <a
@@ -144,24 +144,24 @@ export const Footer = async () => {
               className="invert"
               src="/social/youtube.svg"
               alt="YouTube"
-              width={24}
-              height={24}
+              width={40}
+              height={40}
             />
           </a>
         </div>
-        <div className="flex flex-wrap justify-center gap-16 mt-6 mb-12">
+        <div className="flex flex-wrap justify-center gap-16 mt-16 mb-12">
           <Image
             className="invert"
             src="/associations/SBC_Logo.png"
             alt="Southern Baptist Convention"
-            width={200}
-            height={100}
+            width={120}
+            height={60}
           />
           <Image
             src="/associations/AMN_Logo.png"
             alt="Arizona Mission Network"
-            width={200}
-            height={100}
+            width={120}
+            height={60}
           />
         </div>
         <div className="text-center text-xs text-text-dark">

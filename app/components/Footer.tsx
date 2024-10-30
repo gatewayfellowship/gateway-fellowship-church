@@ -102,7 +102,7 @@ export const Footer = async () => {
         </div>
       </div>
       <div className="mb-6 mx-6">
-        <div className="flex justify-end">
+        <div className="flex justify-center gap-8 md:gap-4">
           <a
             className="p-4 cursor-pointer"
             title="instagram"
@@ -148,6 +148,21 @@ export const Footer = async () => {
               height={24}
             />
           </a>
+        </div>
+        <div className="flex flex-wrap justify-center gap-16 mt-6 mb-12">
+          <Image
+            className="invert"
+            src="/associations/SBC_Logo.png"
+            alt="Southern Baptist Convention"
+            width={200}
+            height={100}
+          />
+          <Image
+            src="/associations/AMN_Logo.png"
+            alt="Arizona Mission Network"
+            width={200}
+            height={100}
+          />
         </div>
         <div className="text-center text-xs text-text-dark">
           Copyright © {new Date().getFullYear()} Gateway Fellowship. All rights

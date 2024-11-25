@@ -2,11 +2,11 @@ content:
   - dayOfWeek: Sundays
     serviceTypes:
       - name: Bible Study
-        time: 8:30am
+        time: 9:00am
       - name: Coffee in the Lobby
-        time: 9:30am
-      - name: Service
         time: 10:00am
+      - name: Service
+        time: 10:30am
       - name: Awana Club
         time: 4:00-6:00pm
   - dayOfWeek: Wednesdays

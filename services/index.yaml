@@ -19,3 +19,7 @@ content:
           - Equip Course (All Ages)
           - Team Kids (1-6 grade)
           - Student Ministry (7-12 grade)
+  - dayOfWeek: Special Services
+    serviceTypes:
+      - name: Christmas Eve
+        time: 4:00pm

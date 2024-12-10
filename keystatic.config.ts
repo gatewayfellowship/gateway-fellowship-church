@@ -319,5 +319,30 @@ export default config({
         ),
       },
     }),
+    announcement: singleton({
+      label: "Announcement",
+      schema: {
+        isVisible: fields.checkbox({
+          label: "Whether the announcement banner will be shown or not",
+        }),
+        title: fields.text({
+          label: "Announcement Title",
+          validation: { isRequired: false },
+        }),
+        description: fields.text({
+          label: "Announcement Description",
+          validation: { isRequired: true },
+        }),
+        link: fields.url({
+          label: "Link/url to the page/site you want to send visitors to",
+          validation: { isRequired: false },
+        }),
+        linkText: fields.text({
+          label:
+            "Text for the button in the announcement if you include a link",
+          validation: { isRequired: false },
+        }),
+      },
+    }),
   },
 });

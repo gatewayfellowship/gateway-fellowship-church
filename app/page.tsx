@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Poppins } from "next/font/google";
 import { ContentContainer } from "./components/ContentContainer";
 import { ButtonLink } from "./components/ButtonLink";
+import Announcement from "./components/Announcement";
 
 const poppins = Poppins({ weight: "400", subsets: ["latin"] });
 const poppinsBold = Poppins({ weight: "700", subsets: ["latin"] });
@@ -19,6 +20,7 @@ export default async function Home() {
 
   return (
     <section>
+      <Announcement />
       <div className="mx-4 mb-12 mt-0">
         <div className="relative rounded-3xl overflow-hidden w-full h-full">
           <video

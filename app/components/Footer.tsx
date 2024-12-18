@@ -175,7 +175,7 @@ export const Footer = async () => {
               rel="noopener noreferrer"
               target="_blank"
             >
-              MK Engineering
+              Mark Kimball
             </a>
           </p>
         </div>

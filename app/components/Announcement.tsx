@@ -15,7 +15,7 @@ export default async function Announcement() {
   return (
     <div
       id="announcement"
-      className="fixed bottom-0 left-0 right-0 py-8 px-4 z-40 announcement"
+      className="fixed bottom-0 left-0 right-0 pb-8 px-4 z-40 announcement"
     >
       <div
         className={`${poppins.className} rounded-xl shadow-xl flex items-center justify-center gap-x-6 bg-gradient-to-br text-gray-800 from-primary-300 to-primary-400 px-6 py-2.5 sm:px-3.5`}

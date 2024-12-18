@@ -167,7 +167,7 @@ export const Footer = async () => {
         <div className="text-center text-xs text-text-dark">
           Copyright © {new Date().getFullYear()} Gateway Fellowship. All rights
           reserved.
-          <p className="mb-3">
+          <p className="mb-12">
             Created by{" "}
             <a
               className="hover:underline"

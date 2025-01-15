@@ -9,6 +9,7 @@ const poppinsBold = Poppins({ weight: "700", subsets: ["latin"] });
 
 export const Footer = async () => {
   const services = await reader.singletons.services.read();
+  const contactItems = await reader.singletons.contactItems.read();
 
   return (
     <footer className="py-12 px-4 bg-gradient-to-r from-zinc-600 dark:from-zinc-700 to-zinc-800 dark:to-zinc-800 border-t-zinc-900 border-t rounded-t-3xl">
@@ -52,17 +53,20 @@ export const Footer = async () => {
             <ul className="text-text-dark">
               <li className="mb-3">
                 phone:{" "}
-                <a className="hover:underline" href="tel:4808924711">
-                  480.892.4711
+                <a
+                  className="hover:underline"
+                  href={`tel:${contactItems?.phoneNumber.replace(/[-.]/g, "")}`}
+                >
+                  {contactItems?.phoneNumber}
                 </a>
               </li>
               <li className="mb-3">
                 email:{" "}
                 <a
                   className="hover:underline"
-                  href="mailto:gateway@gatewayfellowship.org"
+                  href={`mailto:${contactItems?.email}`}
                 >
-                  gateway@gatewayfellowship.org
+                  {contactItems?.email}
                 </a>
               </li>
             </ul>
@@ -90,12 +94,12 @@ export const Footer = async () => {
             <div className="mt-12 mb-3 text-text-dark">
               <a
                 className="hover:underline"
-                href="https://maps.app.goo.gl/tSQBMEk8cV1AhiEg6"
+                href={contactItems?.googleMapsLink}
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                <div>60 N Recker Road</div>
-                <div>Gilbert, Arizona 85234</div>
+                <div>{contactItems?.addressLine1}</div>
+                <div>{contactItems?.addressLine2}</div>
               </a>
             </div>
           </div>
@@ -103,51 +107,57 @@ export const Footer = async () => {
       </div>
       <div className="mb-6 mx-6">
         <div className="flex justify-center gap-8 md:gap-4">
-          <a
-            className="p-4 cursor-pointer"
-            title="instagram"
-            href="https://www.instagram.com/gatewayfellowshipaz"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <Image
-              className="invert"
-              src="/social/instagram.svg"
-              alt="Instagram"
-              width={40}
-              height={40}
-            />
-          </a>
-          <a
-            className="p-4 cursor-pointer"
-            title="facebook"
-            href="https://www.facebook.com/profile.php?id=100064455289156"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <Image
-              className="invert"
-              src="/social/facebook.svg"
-              alt="Facebook"
-              width={40}
-              height={40}
-            />
-          </a>
-          <a
-            className="p-4 cursor-pointer"
-            title="youtube"
-            href="https://www.youtube.com/@gatewayfellowshipsbc8663"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <Image
-              className="invert"
-              src="/social/youtube.svg"
-              alt="YouTube"
-              width={40}
-              height={40}
-            />
-          </a>
+          {contactItems?.instagramLink && (
+            <a
+              className="p-4 cursor-pointer"
+              title="instagram"
+              href={contactItems.instagramLink}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <Image
+                className="invert"
+                src="/social/instagram.svg"
+                alt="Instagram"
+                width={40}
+                height={40}
+              />
+            </a>
+          )}
+          {contactItems?.facebookLink && (
+            <a
+              className="p-4 cursor-pointer"
+              title="facebook"
+              href={contactItems.facebookLink}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <Image
+                className="invert"
+                src="/social/facebook.svg"
+                alt="Facebook"
+                width={40}
+                height={40}
+              />
+            </a>
+          )}
+          {contactItems?.youtubeLink && (
+            <a
+              className="p-4 cursor-pointer"
+              title="youtube"
+              href={contactItems.youtubeLink}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <Image
+                className="invert"
+                src="/social/youtube.svg"
+                alt="YouTube"
+                width={40}
+                height={40}
+              />
+            </a>
+          )}
         </div>
         <div className="flex flex-wrap justify-center gap-16 mt-16 mb-12">
           <Image
@@ -165,8 +175,8 @@ export const Footer = async () => {
           />
         </div>
         <div className="text-center text-xs text-text-dark">
-          Copyright © {new Date().getFullYear()} Gateway Fellowship. All rights
-          reserved.
+          Copyright © 2024 - {new Date().getFullYear()} Gateway Fellowship. All
+          rights reserved.
           <p className="mb-12">
             Created by{" "}
             <a

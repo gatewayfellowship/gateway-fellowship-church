@@ -356,7 +356,7 @@ export default config({
           validation: { isRequired: false },
         }),
         youtubeLink: fields.text({
-          label: "YouTube link",
+          label: "YouTube link (will also update YouTube link on Sermons page)",
           validation: { isRequired: false },
         }),
         phoneNumber: fields.text({

@@ -10,6 +10,7 @@ import { Subtitle } from "../components/Subtitle";
 export default async function Sermons() {
   const page = await reader.collections.pages.read("sermons");
   const sermonSeries = await reader.collections.sermonSeries.all();
+  const contactItems = await reader.singletons.contactItems.read();
 
   if (!page) {
     return "LOADING...";
@@ -18,13 +19,15 @@ export default async function Sermons() {
   return (
     <main>
       <Jumbotron title={page.title} imageSrc={page.imageSrc} />
-      <ButtonLink
-        isExternal
-        primary
-        className="block my-8 mx-auto w-fit"
-        text="Watch on YouTube"
-        to="https://www.youtube.com/@gatewayfellowshipsbc8663"
-      />
+      {contactItems?.youtubeLink && (
+        <ButtonLink
+          isExternal
+          primary
+          className="block my-8 mx-auto w-fit"
+          text="Watch on YouTube"
+          to={contactItems.youtubeLink}
+        />
+      )}
       {sermonSeries && (
         <ContentContainer>
           <section className="grid gap-10 justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3">

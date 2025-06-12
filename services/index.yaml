@@ -19,8 +19,3 @@ content:
           - Equip Course (All Ages)
           - Team Kids (1-6 grade)
           - Student Ministry (7-12 grade)
-  - dayOfWeek: Friday
-    serviceTypes:
-      - name: Good Friday Service
-        time: 6:30pm
-        description: Come worship with us on Good Friday for a special 1 hour service!

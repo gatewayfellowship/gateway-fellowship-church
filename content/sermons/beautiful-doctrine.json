@@ -2,12 +2,5 @@
   "title": "Beautiful Doctrine",
   "imageSrc": "/images/sermonSeries/beautiful-doctrine/imageSrc.jpeg",
   "startDate": "2025-01-12",
-  "sermons": [
-    {
-      "title": "test",
-      "speaker": "me",
-      "file": "/files/sermons/beautiful-doctrine/sermons/0/file.mp4",
-      "date": "2025-08-25"
-    }
-  ]
+  "sermons": []
 }

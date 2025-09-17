@@ -6,7 +6,7 @@ export default config({
     kind: "cloud",
   },
   cloud: {
-    project: "gateway-fellowship/gateway-fellowship",
+    project: "cadenholliday23-ux/gateway-fellowship",
   },
   collections: {
     pages: collection({

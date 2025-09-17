@@ -9,6 +9,13 @@
       "speaker": "Cody Bishop",
       "file": "/files/sermons/gospel-partnership/sermons/0/file.mp3",
       "date": "2024-08-04"
+    },
+    {
+      "title": "test",
+      "description": "test",
+      "speaker": "test",
+      "file": "/files/sermons/gospel-partnership/sermons/1/file.mp3",
+      "date": "2025-09-21"
     }
   ]
 }

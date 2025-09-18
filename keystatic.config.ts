@@ -29,57 +29,54 @@ export default config({
       },
     }),
     sermonSeries: collection({
-      label: "Sermon Series",
-      slugField: "title",
-      path: "content/sermons/*",
-      format: { data: "json" },
-      schema: {
-        title: fields.slug({
-          name: { label: "Sermon Series Title" },
-        }),
-        imageSrc: fields.image({
-          label: "Series Image",
-          directory: "public/images/sermonSeries",
-          publicPath: "/images/sermonSeries/",
-        }),
-        startDate: fields.date({
-          label: "Series Start Date",
+  label: "Sermon Series",
+  slugField: "title",
+  path: "content/sermons/*",
+  format: { data: "json" },
+  schema: {
+    title: fields.slug({
+      name: { label: "Sermon Series Title" },
+    }),
+    imageSrc: fields.image({
+      label: "Series Image",
+      directory: "public/images/sermonSeries",
+      publicPath: "/images/sermonSeries/",
+    }),
+    startDate: fields.date({
+      label: "Series Start Date",
+      validation: { isRequired: true },
+    }),
+    sermons: fields.array(
+      fields.object({
+        title: fields.text({
+          label: "Sermon Title",
           validation: { isRequired: true },
         }),
-        sermons: fields.array(
-          fields.object({
-            title: fields.text({
-              label: "Sermon Title",
-              validation: { isRequired: true },
-            }),
-            description: fields.text({
-              label: "Description",
-              multiline: true,
-            }),
-            speaker: fields.text({
-              label: "Speaker",
-              validation: { isRequired: true },
-            }),
-            file: fields.file({
-              label: "File",
-              description: "Audio File of the sermon",
-              directory: "Public/files/sermons",
-              publicPath: "/files/sermons/",
-              validation: { isRequired: true },
-            }),
-            date: fields.date({
-              label: "Date",
-              validation: { isRequired: true },
-            }),
-          }),
-          {
-            label: "Sermons",
-            itemLabel: (props) => props.fields.title.value,
-          }
-        ),
-      },
-    }),
+        description: fields.text({
+          label: "Description",
+          multiline: true,
+        }),
+        speaker: fields.text({
+          label: "Speaker",
+          validation: { isRequired: true },
+        }),
+        videoUrl: fields.url({
+          label: "YouTube Video URL",
+          description: "Insert the full YouTube link (e.g., https://youtu.be/VIDEO_ID)",
+          validation: { isRequired: true },
+        }),
+        date: fields.date({
+          label: "Date",
+          validation: { isRequired: true },
+        }),
+      }),
+      {
+        label: "Sermons",
+        itemLabel: (props) => props.fields.title.value,
+      }
+    ),
   },
+}),
   singletons: {
     distinctives: singleton({
       label: "Distinctives",

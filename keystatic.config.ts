@@ -342,41 +342,39 @@ export default config({
       },
     }),
     contactItems: singleton({
-      label: "Contact Items",
-      schema: {
-        facebookLink: fields.text({
-          label: "Facebook link",
-          validation: { isRequired: false },
-        }),
-        instagramLink: fields.text({
-          label: "Instagram link",
-          validation: { isRequired: false },
-        }),
-        youtubeLink: fields.text({
-          label: "YouTube link (will also update YouTube link on Sermons page)",
-          validation: { isRequired: false },
-        }),
-        phoneNumber: fields.text({
-          label: "Church phone number",
-          validation: { isRequired: true },
-        }),
-        email: fields.text({
-          label: "Church email address",
-          validation: { isRequired: true },
-        }),
-        addressLine1: fields.text({
-          label: "Address line 1 (street)",
-          validation: { isRequired: true },
-        }),
-        addressLine2: fields.text({
-          label: "Address line 2 (city, state, zip)",
-          validation: { isRequired: true },
-        }),
-        googleMapsLink: fields.text({
-          label: "Google Maps link to church address",
-          validation: { isRequired: true },
-        }),
-      },
+  label: "Contact Items",
+  schema: {
+    facebookLink: fields.text({
+      label: "Facebook link",
+      validation: { isRequired: false },
     }),
-  },
-});
+    instagramLink: fields.text({
+      label: "Instagram link",
+      validation: { isRequired: false },
+    }),
+    youtubeLink: fields.text({
+      label: "YouTube link (will also update YouTube link on Sermons page)",
+      validation: { isRequired: false },
+    }),
+    phoneNumber: fields.text({
+      label: "Church phone number",
+      validation: { isRequired: true },
+    }),
+    email: fields.text({
+      label: "Church email address",
+      validation: { isRequired: true },
+    }),
+    addressLine1: fields.text({
+      label: "Address line 1 (street)",
+      validation: { isRequired: true },
+    }),
+    addressLine2: fields.text({
+      label: "Address line 2 (city, state, zip)",
+      validation: { isRequired: true },
+    }),
+    googleMapsLink: fields.text({
+      label: "Google Maps link to church address",
+      validation: { isRequired: true },
+    }),
+  } // <- end of schema, no trailing comma
+}),   // <- end of singleton, no extra comma after this if it's the last entry

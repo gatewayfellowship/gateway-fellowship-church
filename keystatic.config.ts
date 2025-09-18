@@ -63,7 +63,6 @@ export default config({
             videoUrl: fields.url({
               label: "YouTube Video URL",
               description: "insert YouTube video link",
-              validation: { isRequired: true },
             }),
             date: fields.date({
               label: "Date",

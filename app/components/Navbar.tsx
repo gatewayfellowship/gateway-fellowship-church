@@ -13,6 +13,9 @@ export const Navbar = () => {
   const toggleShowAboutDropdown = () =>
     setShowAboutDropdown(!showAboutDropdown);
 
+  const toggleShowMinistriesDropdown = () =>
+    setShowMinistriesDropdown(!showMinistriesDropdown);
+
   const linkClasses =
     "text-lg font-semibold leading-6 text-text-dark hover:text-primary-300 transition-all";
   const mobileLinkClasses =
@@ -26,6 +29,7 @@ export const Navbar = () => {
           className="flex items-center justify-between p-6 bg-zinc-800 dark:bg-zinc-900 rounded-b-3xl shadow-md shadow-zinc-600 dark:shadow-zinc-700"
           aria-label="Global"
         >
+          {/* Logo */}
           <div className="flex lg:flex-1">
             <Link className="-m-1.5 p-1.5" href="/">
               <span className="sr-only">Gateway Fellowship</span>
@@ -47,6 +51,8 @@ export const Navbar = () => {
               />
             </Link>
           </div>
+
+          {/* Mobile Menu Button */}
           <div className="flex lg:hidden">
             <button
               type="button"
@@ -54,7 +60,6 @@ export const Navbar = () => {
               onClick={() => setIsOpen(true)}
             >
               <span className="sr-only">Open main menu</span>
-              {/* Hamburger icon (existing SVG) */}
               <svg
                 className="h-6 w-6"
                 fill="none"
@@ -71,8 +76,10 @@ export const Navbar = () => {
               </svg>
             </button>
           </div>
+
+          {/* Desktop Navigation */}
           <div className="hidden lg:flex lg:gap-x-12">
-            {/* ABOUT US DROPDOWN */}
+            {/* About Us Dropdown */}
             <div
               className="relative"
               onMouseEnter={toggleShowAboutDropdown}
@@ -85,10 +92,14 @@ export const Navbar = () => {
                 className={`absolute right-0 mt-2 z-10 w-56 origin-top-right rounded-md text-text-dark bg-zinc-800 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none transition ease-out duration-300 ${
                   showAboutDropdown
                     ? "transform opacity-100 scale-100"
-                    : "transform opacity-0 scale-95 pointer-events-none"
+                    : "transform opacity-0 scale-95"
                 }`}
+                role="menu"
+                aria-orientation="vertical"
+                aria-labelledby="menu-button"
+                tabIndex={-1}
               >
-                <div className="py-1">
+                <div className="py-1" role="none">
                   <Link
                     href="/beliefs"
                     className="block px-4 py-2 text-base hover:text-primary-300"
@@ -111,11 +122,11 @@ export const Navbar = () => {
               </div>
             </div>
 
-            {/* MINISTRIES DROPDOWN */}
+            {/* Ministries Dropdown */}
             <div
               className="relative"
-              onMouseEnter={() => setShowMinistriesDropdown(true)}
-              onMouseLeave={() => setShowMinistriesDropdown(false)}
+              onMouseEnter={toggleShowMinistriesDropdown}
+              onMouseLeave={toggleShowMinistriesDropdown}
             >
               <Link href="/ministries" className={`${linkClasses} p-4`}>
                 Ministries
@@ -124,29 +135,49 @@ export const Navbar = () => {
                 className={`absolute right-0 mt-2 z-10 w-56 origin-top-right rounded-md text-text-dark bg-zinc-800 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none transition ease-out duration-300 ${
                   showMinistriesDropdown
                     ? "transform opacity-100 scale-100"
-                    : "transform opacity-0 scale-95 pointer-events-none"
+                    : "transform opacity-0 scale-95"
                 }`}
+                role="menu"
+                aria-orientation="vertical"
+                aria-labelledby="menu-button"
+                tabIndex={-1}
               >
-                <div className="py-1">
-                  <Link href="/gateway-kids" className="block px-4 py-2 hover:text-primary-300">
+                <div className="py-1" role="none">
+                  <Link
+                    href="/gateway-kids"
+                    className="block px-4 py-2 text-base hover:text-primary-300"
+                  >
                     Gateway Kids
                   </Link>
-                  <Link href="/gateway-students" className="block px-4 py-2 hover:text-primary-300">
+                  <Link
+                    href="/gateway-students"
+                    className="block px-4 py-2 text-base hover:text-primary-300"
+                  >
                     Gateway Students
                   </Link>
-                  <Link href="/men-s-ministry" className="block px-4 py-2 hover:text-primary-300">
+                  <Link
+                    href="/men-s-ministry"
+                    className="block px-4 py-2 text-base hover:text-primary-300"
+                  >
                     Men's Ministry
                   </Link>
-                  <Link href="/women-s-ministry" className="block px-4 py-2 hover:text-primary-300">
+                  <Link
+                    href="/women-s-ministry"
+                    className="block px-4 py-2 text-base hover:text-primary-300"
+                  >
                     Women's Ministry
                   </Link>
-                  <Link href="/bible-study" className="block px-4 py-2 hover:text-primary-300">
+                  <Link
+                    href="/bible-study"
+                    className="block px-4 py-2 text-base hover:text-primary-300"
+                  >
                     Bible Study
                   </Link>
                 </div>
               </div>
             </div>
 
+            {/* Other Links */}
             <Link href="/sermons" className={linkClasses}>
               Sermons
             </Link>
@@ -154,23 +185,21 @@ export const Navbar = () => {
               Give
             </Link>
           </div>
+
+          {/* I'm New Button */}
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <ButtonLink text="I'm New" to="/new" primary={false} />
+            <ButtonLink text="I&apos;m New" to="/new" primary={false} />
           </div>
         </nav>
       </header>
 
-      {/* MOBILE MENU */}
+      {/* Mobile Menu */}
       {isOpen && (
         <div className="lg:hidden" role="dialog" aria-modal="true">
           <div className="fixed inset-0 z-50"></div>
           <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-zinc-900 px-6 py-6 sm:max-w-sm shadow-md shadow-zinc-600 dark:shadow-zinc-700">
             <div className="flex items-center justify-between">
-              <Link
-                onClick={() => setIsOpen(false)}
-                href="/"
-                className="-m-1.5 p-1.5"
-              >
+              <Link onClick={() => setIsOpen(false)} href="/" className="-m-1.5 p-1.5">
                 <span className="sr-only">Gateway Fellowship</span>
                 <Image
                   src="/White_Text_Beside.png"
@@ -186,7 +215,6 @@ export const Navbar = () => {
                 onClick={() => setIsOpen(false)}
               >
                 <span className="sr-only">Close menu</span>
-                {/* Close icon (existing SVG) */}
                 <svg
                   className="h-6 w-6"
                   fill="none"
@@ -195,23 +223,15 @@ export const Navbar = () => {
                   stroke="currentColor"
                   aria-hidden="true"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
             </div>
-
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-accent-400">
                 <div className="space-y-2 py-6">
-                  {/* ABOUT US MOBILE */}
-                  <div
-                    className={mobileLinkClasses}
-                    onClick={toggleShowAboutDropdown}
-                  >
+                  {/* About Us Dropdown in Mobile */}
+                  <div className={mobileLinkClasses} onClick={toggleShowAboutDropdown}>
                     About Us
                   </div>
                   <div
@@ -242,64 +262,57 @@ export const Navbar = () => {
                     </Link>
                   </div>
 
-                  {/* MINISTRIES MOBILE */}
-                  <Link
-                    onClick={() => setIsOpen(false)}
-                    href="/ministries"
-                    className={mobileLinkClasses}
-                  >
+                  {/* Ministries Dropdown in Mobile */}
+                  <div className={mobileLinkClasses} onClick={toggleShowMinistriesDropdown}>
                     Ministries
-                  </Link>
-                  <div className="pl-8">
+                  </div>
+                  <div
+                    className={`transition-all duration-500 ease-in-out overflow-hidden ${
+                      showMinistriesDropdown ? "max-h-96" : "max-h-0 invisible"
+                    }`}
+                  >
                     <Link
                       onClick={() => setIsOpen(false)}
                       href="/gateway-kids"
-                      className={`${mobileLinkClasses} text-base`}
+                      className={`${mobileLinkClasses} text-base pl-8`}
                     >
                       Gateway Kids
                     </Link>
                     <Link
                       onClick={() => setIsOpen(false)}
                       href="/gateway-students"
-                      className={`${mobileLinkClasses} text-base`}
+                      className={`${mobileLinkClasses} text-base pl-8`}
                     >
                       Gateway Students
                     </Link>
                     <Link
                       onClick={() => setIsOpen(false)}
                       href="/men-s-ministry"
-                      className={`${mobileLinkClasses} text-base`}
+                      className={`${mobileLinkClasses} text-base pl-8`}
                     >
                       Men's Ministry
                     </Link>
                     <Link
                       onClick={() => setIsOpen(false)}
                       href="/women-s-ministry"
-                      className={`${mobileLinkClasses} text-base`}
+                      className={`${mobileLinkClasses} text-base pl-8`}
                     >
                       Women's Ministry
                     </Link>
                     <Link
                       onClick={() => setIsOpen(false)}
                       href="/bible-study"
-                      className={`${mobileLinkClasses} text-base`}
+                      className={`${mobileLinkClasses} text-base pl-8`}
                     >
                       Bible Study
                     </Link>
                   </div>
 
-                  <Link
-                    onClick={() => setIsOpen(false)}
-                    href="/sermons"
-                    className={mobileLinkClasses}
-                  >
+                  {/* Other Links */}
+                  <Link onClick={() => setIsOpen(false)} href="/sermons" className={mobileLinkClasses}>
                     Sermons
                   </Link>
-                  <Link
-                    onClick={() => setIsOpen(false)}
-                    href="/give"
-                    className={mobileLinkClasses}
-                  >
+                  <Link onClick={() => setIsOpen(false)} href="/give" className={mobileLinkClasses}>
                     Give
                   </Link>
                 </div>

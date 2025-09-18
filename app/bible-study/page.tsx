@@ -1,15 +1,13 @@
 import React from "react";
 import Markdoc from "@markdoc/markdoc";
-import reader from "../../keystatic/reader";
-import { Jumbotron } from "../../components/Jumbotron";
-import { ContentContainer } from "../../components/ContentContainer";
+import reader from "@/keystatic/reader";
+import { Jumbotron } from "@/components/Jumbotron";
+import { ContentContainer } from "@/components/ContentContainer";
 
 export default async function BibleStudy() {
   const page = await reader.collections.pages.read("bible-study");
 
-  if (!page) {
-    return "LOADING...";
-  }
+  if (!page) return "LOADING...";
 
   const { node } = await page.content();
   const renderable = Markdoc.transform(node);

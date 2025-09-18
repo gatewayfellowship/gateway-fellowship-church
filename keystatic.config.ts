@@ -377,4 +377,4 @@ export default config({
       validation: { isRequired: true },
     }),
   } // <- end of schema, no trailing comma
-}),   // <- end of singleton, no extra comma after this if it's the last entry
+}) // <- end of singleton

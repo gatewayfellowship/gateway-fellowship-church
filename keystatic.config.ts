@@ -60,9 +60,32 @@ export default config({
               label: "Speaker",
               validation: { isRequired: true },
             }),
-            videoUrl: fields.url({
-              label: "YouTube Video URL",
-              description: "insert YouTube video link",
+            {sermonSeries.sermons.map((sermon) => (
+  <div key={sermon.title}>
+    {/* Link to the YouTube video */}
+    <a href={sermon.videoUrl} target="_blank" rel="noopener noreferrer">
+      <Image
+        className="shadow-md rounded-xl mb-8 dark:shadow-zinc-700 object-cover w-full aspect-video hover:shadow-lg dark:hover:shadow-zinc-700 transition-shadow"
+        src={sermonSeries.imageSrc || "/bible-placeholder.jpg"}
+        alt={sermon.title}
+      />
+    </a>
+    
+    {/* Optionally embed the video */}
+    {sermon.videoUrl && (
+      <iframe
+        width="560"
+        height="315"
+        src={sermon.videoUrl}
+        title={sermon.title}
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      />
+    )}
+  </div>
+))}
+
             }),
             date: fields.date({
               label: "Date",

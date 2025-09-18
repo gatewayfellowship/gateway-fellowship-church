@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ButtonLink } from "./ButtonLink";
@@ -10,11 +10,26 @@ export const Navbar = () => {
   const [showAboutDropdown, setShowAboutDropdown] = useState(false);
   const [showMinistriesDropdown, setShowMinistriesDropdown] = useState(false);
 
-  const toggleShowAboutDropdown = () =>
-    setShowAboutDropdown(!showAboutDropdown);
+  const aboutTimeout = useRef<NodeJS.Timeout | null>(null);
+  const ministriesTimeout = useRef<NodeJS.Timeout | null>(null);
 
-  const toggleShowMinistriesDropdown = () =>
-    setShowMinistriesDropdown(!showMinistriesDropdown);
+  const handleAboutMouseEnter = () => {
+    if (aboutTimeout.current) clearTimeout(aboutTimeout.current);
+    setShowAboutDropdown(true);
+  };
+
+  const handleAboutMouseLeave = () => {
+    aboutTimeout.current = setTimeout(() => setShowAboutDropdown(false), 150);
+  };
+
+  const handleMinistriesMouseEnter = () => {
+    if (ministriesTimeout.current) clearTimeout(ministriesTimeout.current);
+    setShowMinistriesDropdown(true);
+  };
+
+  const handleMinistriesMouseLeave = () => {
+    ministriesTimeout.current = setTimeout(() => setShowMinistriesDropdown(false), 150);
+  };
 
   const linkClasses =
     "text-lg font-semibold leading-6 text-text-dark hover:text-primary-300 transition-all";
@@ -82,8 +97,8 @@ export const Navbar = () => {
             {/* About Us Dropdown */}
             <div
               className="relative"
-              onMouseEnter={toggleShowAboutDropdown}
-              onMouseLeave={toggleShowAboutDropdown}
+              onMouseEnter={handleAboutMouseEnter}
+              onMouseLeave={handleAboutMouseLeave}
             >
               <Link href="/beliefs" className={`${linkClasses} p-4`}>
                 About Us
@@ -94,28 +109,15 @@ export const Navbar = () => {
                     ? "transform opacity-100 scale-100"
                     : "transform opacity-0 scale-95"
                 }`}
-                role="menu"
-                aria-orientation="vertical"
-                aria-labelledby="menu-button"
-                tabIndex={-1}
               >
-                <div className="py-1" role="none">
-                  <Link
-                    href="/beliefs"
-                    className="block px-4 py-2 text-base hover:text-primary-300"
-                  >
+                <div className="py-1">
+                  <Link href="/beliefs" className="block px-4 py-2 text-base hover:text-primary-300">
                     Our Beliefs
                   </Link>
-                  <Link
-                    href="/staff"
-                    className="block px-4 py-2 text-base hover:text-primary-300"
-                  >
+                  <Link href="/staff" className="block px-4 py-2 text-base hover:text-primary-300">
                     Our Staff
                   </Link>
-                  <Link
-                    href="/history"
-                    className="block px-4 py-2 text-base hover:text-primary-300"
-                  >
+                  <Link href="/history" className="block px-4 py-2 text-base hover:text-primary-300">
                     Our History
                   </Link>
                 </div>
@@ -125,8 +127,8 @@ export const Navbar = () => {
             {/* Ministries Dropdown */}
             <div
               className="relative"
-              onMouseEnter={toggleShowMinistriesDropdown}
-              onMouseLeave={toggleShowMinistriesDropdown}
+              onMouseEnter={handleMinistriesMouseEnter}
+              onMouseLeave={handleMinistriesMouseLeave}
             >
               <Link href="/ministries" className={`${linkClasses} p-4`}>
                 Ministries
@@ -137,40 +139,21 @@ export const Navbar = () => {
                     ? "transform opacity-100 scale-100"
                     : "transform opacity-0 scale-95"
                 }`}
-                role="menu"
-                aria-orientation="vertical"
-                aria-labelledby="menu-button"
-                tabIndex={-1}
               >
-                <div className="py-1" role="none">
-                  <Link
-                    href="/gateway-kids"
-                    className="block px-4 py-2 text-base hover:text-primary-300"
-                  >
+                <div className="py-1">
+                  <Link href="/gateway-kids" className="block px-4 py-2 text-base hover:text-primary-300">
                     Gateway Kids
                   </Link>
-                  <Link
-                    href="/gateway-students"
-                    className="block px-4 py-2 text-base hover:text-primary-300"
-                  >
+                  <Link href="/gateway-students" className="block px-4 py-2 text-base hover:text-primary-300">
                     Gateway Students
                   </Link>
-                  <Link
-                    href="/men-s-ministry"
-                    className="block px-4 py-2 text-base hover:text-primary-300"
-                  >
+                  <Link href="/men-s-ministry" className="block px-4 py-2 text-base hover:text-primary-300">
                     Men&apos;s Ministry
                   </Link>
-                  <Link
-                    href="/women-s-ministry"
-                    className="block px-4 py-2 text-base hover:text-primary-300"
-                  >
+                  <Link href="/women-s-ministry" className="block px-4 py-2 text-base hover:text-primary-300">
                     Women&apos;s Ministry
                   </Link>
-                  <Link
-                    href="/bible-study"
-                    className="block px-4 py-2 text-base hover:text-primary-300"
-                  >
+                  <Link href="/bible-study" className="block px-4 py-2 text-base hover:text-primary-300">
                     Bible Study
                   </Link>
                 </div>
@@ -178,12 +161,8 @@ export const Navbar = () => {
             </div>
 
             {/* Other Links */}
-            <Link href="/sermons" className={linkClasses}>
-              Sermons
-            </Link>
-            <Link href="/give" className={linkClasses}>
-              Give
-            </Link>
+            <Link href="/sermons" className={linkClasses}>Sermons</Link>
+            <Link href="/give" className={linkClasses}>Give</Link>
           </div>
 
           {/* I'm New Button */}
@@ -201,13 +180,7 @@ export const Navbar = () => {
             <div className="flex items-center justify-between">
               <Link onClick={() => setIsOpen(false)} href="/" className="-m-1.5 p-1.5">
                 <span className="sr-only">Gateway Fellowship</span>
-                <Image
-                  src="/White_Text_Beside.png"
-                  alt="Gateway Fellowship Logo"
-                  width={275}
-                  height={80}
-                  priority
-                />
+                <Image src="/White_Text_Beside.png" alt="Gateway Fellowship Logo" width={275} height={80} priority />
               </Link>
               <button
                 type="button"
@@ -215,14 +188,7 @@ export const Navbar = () => {
                 onClick={() => setIsOpen(false)}
               >
                 <span className="sr-only">Close menu</span>
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
@@ -231,97 +197,32 @@ export const Navbar = () => {
               <div className="-my-6 divide-y divide-accent-400">
                 <div className="space-y-2 py-6">
                   {/* About Us Dropdown in Mobile */}
-                  <div className={mobileLinkClasses} onClick={toggleShowAboutDropdown}>
+                  <div className={mobileLinkClasses} onClick={() => setShowAboutDropdown(!showAboutDropdown)}>
                     About Us
                   </div>
-                  <div
-                    className={`transition-all duration-500 ease-in-out overflow-hidden ${
-                      showAboutDropdown ? "max-h-96" : "max-h-0 invisible"
-                    }`}
-                  >
-                    <Link
-                      onClick={() => setIsOpen(false)}
-                      href="/beliefs"
-                      className={`${mobileLinkClasses} text-base pl-8`}
-                    >
-                      Our Beliefs
-                    </Link>
-                    <Link
-                      onClick={() => setIsOpen(false)}
-                      href="/staff"
-                      className={`${mobileLinkClasses} text-base pl-8`}
-                    >
-                      Our Staff
-                    </Link>
-                    <Link
-                      onClick={() => setIsOpen(false)}
-                      href="/history"
-                      className={`${mobileLinkClasses} text-base pl-8`}
-                    >
-                      Our History
-                    </Link>
+                  <div className={`transition-all duration-500 ease-in-out overflow-hidden ${showAboutDropdown ? "max-h-96" : "max-h-0 invisible"}`}>
+                    <Link onClick={() => setIsOpen(false)} href="/beliefs" className={`${mobileLinkClasses} text-base pl-8`}>Our Beliefs</Link>
+                    <Link onClick={() => setIsOpen(false)} href="/staff" className={`${mobileLinkClasses} text-base pl-8`}>Our Staff</Link>
+                    <Link onClick={() => setIsOpen(false)} href="/history" className={`${mobileLinkClasses} text-base pl-8`}>Our History</Link>
                   </div>
 
                   {/* Ministries Dropdown in Mobile */}
-                  <div className={mobileLinkClasses} onClick={toggleShowMinistriesDropdown}>
-                    Ministries
-                  </div>
-                  <div
-                    className={`transition-all duration-500 ease-in-out overflow-hidden ${
-                      showMinistriesDropdown ? "max-h-96" : "max-h-0 invisible"
-                    }`}
-                  >
-                    <Link
-                      onClick={() => setIsOpen(false)}
-                      href="/gateway-kids"
-                      className={`${mobileLinkClasses} text-base pl-8`}
-                    >
-                      Gateway Kids
-                    </Link>
-                    <Link
-                      onClick={() => setIsOpen(false)}
-                      href="/gateway-students"
-                      className={`${mobileLinkClasses} text-base pl-8`}
-                    >
-                      Gateway Students
-                    </Link>
-                    <Link
-                      onClick={() => setIsOpen(false)}
-                      href="/men-s-ministry"
-                      className={`${mobileLinkClasses} text-base pl-8`}
-                    >
-                      Men&apos;s Ministry
-                    </Link>
-                    <Link
-                      onClick={() => setIsOpen(false)}
-                      href="/women-s-ministry"
-                      className={`${mobileLinkClasses} text-base pl-8`}
-                    >
-                      Women&apos;s Ministry
-                    </Link>
-                    <Link
-                      onClick={() => setIsOpen(false)}
-                      href="/bible-study"
-                      className={`${mobileLinkClasses} text-base pl-8`}
-                    >
-                      Bible Study
-                    </Link>
+                  <div className={mobileLinkClasses} onClick={() => setShowMinistriesDropdown(!showMinistriesDropdown)}>Ministries</div>
+                  <div className={`transition-all duration-500 ease-in-out overflow-hidden ${showMinistriesDropdown ? "max-h-96" : "max-h-0 invisible"}`}>
+                    <Link onClick={() => setIsOpen(false)} href="/gateway-kids" className={`${mobileLinkClasses} text-base pl-8`}>Gateway Kids</Link>
+                    <Link onClick={() => setIsOpen(false)} href="/gateway-students" className={`${mobileLinkClasses} text-base pl-8`}>Gateway Students</Link>
+                    <Link onClick={() => setIsOpen(false)} href="/men-s-ministry" className={`${mobileLinkClasses} text-base pl-8`}>Men&apos;s Ministry</Link>
+                    <Link onClick={() => setIsOpen(false)} href="/women-s-ministry" className={`${mobileLinkClasses} text-base pl-8`}>Women&apos;s Ministry</Link>
+                    <Link onClick={() => setIsOpen(false)} href="/bible-study" className={`${mobileLinkClasses} text-base pl-8`}>Bible Study</Link>
                   </div>
 
                   {/* Other Links */}
-                  <Link onClick={() => setIsOpen(false)} href="/sermons" className={mobileLinkClasses}>
-                    Sermons
-                  </Link>
-                  <Link onClick={() => setIsOpen(false)} href="/give" className={mobileLinkClasses}>
-                    Give
-                  </Link>
+                  <Link onClick={() => setIsOpen(false)} href="/sermons" className={mobileLinkClasses}>Sermons</Link>
+                  <Link onClick={() => setIsOpen(false)} href="/give" className={mobileLinkClasses}>Give</Link>
                 </div>
+
                 <div className="py-6">
-                  <Link
-                    onClick={() => setIsOpen(false)}
-                    href="/new"
-                    className="mx-3 block rounded-lg px-3 py-2.5 text-2xl font-semibold leading-7 text-text-dark hover:dark:bg-primary-500"
-                  >
+                  <Link onClick={() => setIsOpen(false)} href="/new" className="mx-3 block rounded-lg px-3 py-2.5 text-2xl font-semibold leading-7 text-text-dark hover:dark:bg-primary-500">
                     I&apos;m New
                   </Link>
                 </div>

@@ -60,11 +60,9 @@ export default config({
               label: "Speaker",
               validation: { isRequired: true },
             }),
-            file: fields.file({
-              label: "File",
-              description: "Audio file of the sermon",
-              directory: "public/files/sermons",
-              publicPath: "/files/sermons/",
+            videoUrl: fields.url({
+              label: "YouTube Video URL",
+              description: "insert YouTube video link",
               validation: { isRequired: true },
             }),
             date: fields.date({

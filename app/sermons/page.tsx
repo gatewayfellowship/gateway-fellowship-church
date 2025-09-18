@@ -16,6 +16,15 @@ export default async function Sermons() {
     return "LOADING...";
   }
 
+  // Sort series by startDate (newest first)
+  const sortedSeries = sermonSeries
+    .slice()
+    .sort(
+      (a, b) =>
+        new Date(b.entry.startDate).getTime() -
+        new Date(a.entry.startDate).getTime()
+    );
+
   return (
     <main>
       <Jumbotron title={page.title} imageSrc={page.imageSrc} />
@@ -28,10 +37,10 @@ export default async function Sermons() {
           to={contactItems.youtubeLink}
         />
       )}
-      {sermonSeries && (
+      {sortedSeries && (
         <ContentContainer>
           <section className="grid gap-10 justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            {sermonSeries.map((series) => (
+            {sortedSeries.map((series) => (
               <Link
                 key={series.slug}
                 href={`/sermons/${encodeURIComponent(series.slug)}`}

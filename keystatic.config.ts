@@ -250,44 +250,6 @@ export default config({
         ),
       },
     }),
-
-    // ✅ New Singletons for each ministry page
-    gatewayKids: singleton({
-      label: "Gateway Kids Page",
-      schema: {
-        title: fields.text({ label: "Page Title", validation: { isRequired: true } }),
-        content: fields.markdoc({ label: "Page Content" }),
-      },
-    }),
-    gatewayStudents: singleton({
-      label: "Gateway Students Page",
-      schema: {
-        title: fields.text({ label: "Page Title", validation: { isRequired: true } }),
-        content: fields.markdoc({ label: "Page Content" }),
-      },
-    }),
-    mensMinistry: singleton({
-      label: "Men's Ministry Page",
-      schema: {
-        title: fields.text({ label: "Page Title", validation: { isRequired: true } }),
-        content: fields.markdoc({ label: "Page Content" }),
-      },
-    }),
-    womensMinistry: singleton({
-      label: "Women's Ministry Page",
-      schema: {
-        title: fields.text({ label: "Page Title", validation: { isRequired: true } }),
-        content: fields.markdoc({ label: "Page Content" }),
-      },
-    }),
-    bibleStudy: singleton({
-      label: "Bible Study Page",
-      schema: {
-        title: fields.text({ label: "Page Title", validation: { isRequired: true } }),
-        content: fields.markdoc({ label: "Page Content" }),
-      },
-    }),
-
     services: singleton({
       label: "Services",
       schema: {
@@ -304,7 +266,8 @@ export default config({
                   validation: { isRequired: true },
                 }),
                 time: fields.text({
-                  label: "Time(s) of day (i.e. 10am & 6pm or a single time of day)",
+                  label:
+                    "Time(s) of day (i.e. 10am & 6pm or a single time of day)",
                   validation: { isRequired: true },
                 }),
                 description: fields.text({
@@ -373,7 +336,8 @@ export default config({
           validation: { isRequired: false },
         }),
         linkText: fields.text({
-          label: "Text for the button in the announcement if you include a link",
+          label:
+            "Text for the button in the announcement if you include a link",
           validation: { isRequired: false },
         }),
       },
@@ -413,7 +377,7 @@ export default config({
           label: "Google Maps link to church address",
           validation: { isRequired: true },
         }),
-      },
-    }),
-  },
-});
+      }, // end of schema
+    }), // end of singleton
+  }, // end of singletons
+}); // end of config

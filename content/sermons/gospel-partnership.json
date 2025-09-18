@@ -2,13 +2,5 @@
   "title": "Gospel Partnership",
   "imageSrc": "/images/sermonSeries/gospel-partnership/imageSrc.jpg",
   "startDate": "2024-08-11",
-  "sermons": [
-    {
-      "title": "Thank You",
-      "description": "Philippians 1:1-2 - The beginning of our series through Philippians",
-      "speaker": "Cody Bishop",
-      "file": "/files/sermons/gospel-partnership/sermons/0/file.mp3",
-      "date": "2024-08-04"
-    }
-  ]
+  "sermons": []
 }

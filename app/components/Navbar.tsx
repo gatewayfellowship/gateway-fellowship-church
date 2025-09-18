@@ -159,13 +159,13 @@ export const Navbar = () => {
                     href="/men-s-ministry"
                     className="block px-4 py-2 text-base hover:text-primary-300"
                   >
-                    Men's Ministry
+                    Men&apos;s Ministry
                   </Link>
                   <Link
                     href="/women-s-ministry"
                     className="block px-4 py-2 text-base hover:text-primary-300"
                   >
-                    Women's Ministry
+                    Women&apos;s Ministry
                   </Link>
                   <Link
                     href="/bible-study"
@@ -290,14 +290,14 @@ export const Navbar = () => {
                       href="/men-s-ministry"
                       className={`${mobileLinkClasses} text-base pl-8`}
                     >
-                      Men's Ministry
+                      Men&apos;s Ministry
                     </Link>
                     <Link
                       onClick={() => setIsOpen(false)}
                       href="/women-s-ministry"
                       className={`${mobileLinkClasses} text-base pl-8`}
                     >
-                      Women's Ministry
+                      Women&apos;s Ministry
                     </Link>
                     <Link
                       onClick={() => setIsOpen(false)}

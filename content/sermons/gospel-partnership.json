@@ -2,5 +2,12 @@
   "title": "Gospel Partnership",
   "imageSrc": "/images/sermonSeries/gospel-partnership/imageSrc.jpg",
   "startDate": "2024-08-11",
-  "sermons": []
+  "sermons": [
+    {
+      "title": "Weapons of Mass Destruction",
+      "speaker": "Cody Bishop",
+      "videoUrl": "https://youtu.be/FzlAoHB1Qb8?si=ni_5Wxl5BA050_2v",
+      "date": "2025-09-14"
+    }
+  ]
 }

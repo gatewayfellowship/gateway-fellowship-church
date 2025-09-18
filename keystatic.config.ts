@@ -1,12 +1,12 @@
 // keystatic.config.ts
-import { config, fields, collection, singleton } from '@keystatic/core';
+import { config, fields, collection, singleton } from "@keystatic/core";
 
 export default config({
   storage: {
-    kind: 'cloud',
+    kind: "cloud",
   },
   cloud: {
-    project: 'gateway-fellowship/gateway-fellowship',
+    project: "gateway-fellowship/gateway-fellowship",
   },
   collections: {
     pages: collection({

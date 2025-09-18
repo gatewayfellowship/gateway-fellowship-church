@@ -29,54 +29,55 @@ export default config({
       },
     }),
     sermonSeries: collection({
-  label: "Sermon Series",
-  slugField: "title",
-  path: "content/sermons/*",
-  format: { data: "json" },
-  schema: {
-    title: fields.slug({
-      name: { label: "Sermon Series Title" },
+      label: "Sermon Series",
+      slugField: "title",
+      path: "content/sermons/*",
+      format: { data: "json" },
+      schema: {
+        title: fields.slug({
+          name: { label: "Sermon Series Title" },
+        }),
+        imageSrc: fields.image({
+          label: "Series Image",
+          directory: "public/images/sermonSeries",
+          publicPath: "/images/sermonSeries/",
+        }),
+        startDate: fields.date({
+          label: "Series Start Date",
+          validation: { isRequired: true },
+        }),
+        sermons: fields.array(
+          fields.object({
+            title: fields.text({
+              label: "Sermon Title",
+              validation: { isRequired: true },
+            }),
+            description: fields.text({
+              label: "Description",
+              multiline: true,
+            }),
+            speaker: fields.text({
+              label: "Speaker",
+              validation: { isRequired: true },
+            }),
+            videoUrl: fields.url({
+              label: "YouTube Video URL",
+              description: "Insert YouTube video link",
+              validation: { isRequired: true },
+            }),
+            date: fields.date({
+              label: "Date",
+              validation: { isRequired: true },
+            }),
+          }),
+          {
+            label: "Sermons",
+            itemLabel: (props) => props.fields.title.value,
+          }
+        ),
+      },
     }),
-    imageSrc: fields.image({
-      label: "Series Image",
-      directory: "public/images/sermonSeries",
-      publicPath: "/images/sermonSeries/",
-    }),
-    startDate: fields.date({
-      label: "Series Start Date",
-      validation: { isRequired: true },
-    }),
-    sermons: fields.array(
-      fields.object({
-        title: fields.text({
-          label: "Sermon Title",
-          validation: { isRequired: true },
-        }),
-        description: fields.text({
-          label: "Description",
-          multiline: true,
-        }),
-        speaker: fields.text({
-          label: "Speaker",
-          validation: { isRequired: true },
-        }),
-        videoUrl: fields.url({
-          label: "YouTube Video URL",
-          description: "Insert the full YouTube link (e.g., https://youtu.be/VIDEO_ID)",
-          validation: { isRequired: true },
-        }),
-        date: fields.date({
-          label: "Date",
-          validation: { isRequired: true },
-        }),
-      }),
-      {
-        label: "Sermons",
-        itemLabel: (props) => props.fields.title.value,
-      }
-    ),
   },
-}),
   singletons: {
     distinctives: singleton({
       label: "Distinctives",
@@ -342,41 +343,41 @@ export default config({
       },
     }),
     contactItems: singleton({
-  label: "Contact Items",
-  schema: {
-    facebookLink: fields.text({
-      label: "Facebook link",
-      validation: { isRequired: false },
-    }),
-    instagramLink: fields.text({
-      label: "Instagram link",
-      validation: { isRequired: false },
-    }),
-    youtubeLink: fields.text({
-      label: "YouTube link (will also update YouTube link on Sermons page)",
-      validation: { isRequired: false },
-    }),
-    phoneNumber: fields.text({
-      label: "Church phone number",
-      validation: { isRequired: true },
-    }),
-    email: fields.text({
-      label: "Church email address",
-      validation: { isRequired: true },
-    }),
-    addressLine1: fields.text({
-      label: "Address line 1 (street)",
-      validation: { isRequired: true },
-    }),
-    addressLine2: fields.text({
-      label: "Address line 2 (city, state, zip)",
-      validation: { isRequired: true },
-    }),
-    googleMapsLink: fields.text({
-      label: "Google Maps link to church address",
-      validation: { isRequired: true },
-    }),
-  } // <- end of schema
-}) // <- end of singleton
+      label: "Contact Items",
+      schema: {
+        facebookLink: fields.text({
+          label: "Facebook link",
+          validation: { isRequired: false },
+        }),
+        instagramLink: fields.text({
+          label: "Instagram link",
+          validation: { isRequired: false },
+        }),
+        youtubeLink: fields.text({
+          label: "YouTube link (will also update YouTube link on Sermons page)",
+          validation: { isRequired: false },
+        }),
+        phoneNumber: fields.text({
+          label: "Church phone number",
+          validation: { isRequired: true },
+        }),
+        email: fields.text({
+          label: "Church email address",
+          validation: { isRequired: true },
+        }),
+        addressLine1: fields.text({
+          label: "Address line 1 (street)",
+          validation: { isRequired: true },
+        }),
+        addressLine2: fields.text({
+          label: "Address line 2 (city, state, zip)",
+          validation: { isRequired: true },
+        }),
+        googleMapsLink: fields.text({
+          label: "Google Maps link to church address",
+          validation: { isRequired: true },
+        }),
+      }, // end of schema
+    }), // end of singleton
   }, // end of singletons
 }); // end of config

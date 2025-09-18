@@ -17,7 +17,7 @@ export default config({
         pageName: fields.slug({ name: { label: "Page Name" } }),
         title: fields.text({
           label: "Title",
-          validation: { isRequired: true },
+          validation: { isRequired: false },
         }),
         content: fields.markdoc({ label: "Page Content" }),
         imageSrc: fields.image({

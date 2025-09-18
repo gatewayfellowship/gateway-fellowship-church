@@ -1,16 +1,11 @@
-"use client";
-
 import React from "react";
 import Markdoc from "@markdoc/markdoc";
-import reader from "@/keystatic/reader";
-import { Anton } from "next/font/google";
-import { Jumbotron } from "@/components/Jumbotron";
-import { ContentContainer } from "@/components/ContentContainer";
-
-const anton = Anton({ weight: "400", subsets: ["latin"] });
+import reader from "../../keystatic/reader";
+import { Jumbotron } from "../../components/Jumbotron";
+import { ContentContainer } from "../../components/ContentContainer";
 
 export default async function BibleStudy() {
-  const page = await reader.collections.pages.read("bibleStudy");
+  const page = await reader.collections.pages.read("bible-study");
 
   if (!page) {
     return "LOADING...";

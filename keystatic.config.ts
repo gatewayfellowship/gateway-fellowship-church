@@ -7,7 +7,6 @@ export default config({
   },
   cloud: {
     project: "gateway-fellowship/gateway-fellowship",
-      pullRequests: true,
   },
   collections: {
     pages: collection({

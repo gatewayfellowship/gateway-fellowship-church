@@ -376,5 +376,7 @@ export default config({
       label: "Google Maps link to church address",
       validation: { isRequired: true },
     }),
-  } // <- end of schema, no trailing comma
+  } // <- end of schema
 }) // <- end of singleton
+  }, // end of singletons
+}); // end of config

@@ -2,5 +2,54 @@
   "title": "Summer In The Psalms",
   "imageSrc": "/images/sermonSeries/summer-in-the-psalms/imageSrc.jpg",
   "startDate": "2025-06-01",
-  "sermons": []
+  "sermons": [
+    {
+      "title": "To God Be The Glory",
+      "speaker": "Cody Bishop",
+      "videoUrl": "https://youtu.be/VxNAKBQHxk8?si=nLfsHtPz1S4AJ3DB",
+      "date": "2025-07-27"
+    },
+    {
+      "title": "Greatness Displayed in Weakness",
+      "speaker": "Cody Bishop",
+      "videoUrl": "https://youtu.be/Quf4PHDBScM?si=nb3fpUxZjU0qkO_y",
+      "date": "2025-07-20"
+    },
+    {
+      "title": "Fears Within, Foes Without",
+      "speaker": "Gregg Pfister",
+      "videoUrl": "https://youtu.be/_6hM7k6RVV8?si=_O3EnQFc1yPHS33C",
+      "date": "2025-07-06"
+    },
+    {
+      "title": "The Hatred & Favor of God",
+      "speaker": "Cody Bishop",
+      "videoUrl": "https://youtu.be/kFAQZSN5_5k?si=9DqR_wberMqP3coT",
+      "date": "2025-06-29"
+    },
+    {
+      "title": "Anxiety: The Gospel Solution",
+      "speaker": "Cody Bishop",
+      "videoUrl": "https://youtu.be/kzdYerXDiUQ?si=-mymbrfamL-32LER",
+      "date": "2025-06-22"
+    },
+    {
+      "title": "A Father's Focus",
+      "speaker": "John Phelps",
+      "videoUrl": "https://youtu.be/VAmqTy_kAu0?si=7nEqL6Dk43744y_G",
+      "date": "2025-06-15"
+    },
+    {
+      "title": "The War Is Won",
+      "speaker": "Cody Bishop",
+      "videoUrl": "https://youtu.be/ANW1JrFvnWc?si=PkcGQkMhm4U9djIj",
+      "date": "2025-06-08"
+    },
+    {
+      "title": "Desiring God",
+      "speaker": "Cody Bishop",
+      "videoUrl": "https://youtu.be/C2ZVIvnb5co?si=t5TgHXjfh4YGZO9o",
+      "date": "2025-06-01"
+    }
+  ]
 }

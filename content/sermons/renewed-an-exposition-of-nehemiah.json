@@ -2,5 +2,12 @@
   "title": "Renewed: An Exposition of Nehemiah",
   "imageSrc": "/images/sermonSeries/renewed-an-exposition-of-nehemiah/imageSrc.png",
   "startDate": "2025-08-03",
-  "sermons": []
+  "sermons": [
+    {
+      "title": "Weapons of Mass Destruction",
+      "speaker": "Cody Bishop",
+      "videoUrl": "https://youtu.be/FzlAoHB1Qb8?si=qoP1lXcVHXYubAoY",
+      "date": "2025-09-14"
+    }
+  ]
 }

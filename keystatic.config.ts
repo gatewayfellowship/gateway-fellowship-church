@@ -6,7 +6,7 @@ export default config({
     kind: "cloud",
   },
   cloud: {
-    project: "gateway-fellowship/gateway-fellowship-church",
+    project: "gateway-fellowship/gateway-fellowship",
   },
   collections: {
     pages: collection({

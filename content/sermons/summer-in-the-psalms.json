@@ -2,12 +2,5 @@
   "title": "Summer In The Psalms",
   "imageSrc": "/images/sermonSeries/summer-in-the-psalms/imageSrc.jpg",
   "startDate": "2025-06-01",
-  "sermons": [
-    {
-      "title": "TEST3",
-      "speaker": "TEST",
-      "file": "/files/sermons/summer-in-the-psalms/sermons/0/file.mp3",
-      "date": "2025-09-07"
-    }
-  ]
+  "sermons": []
 }

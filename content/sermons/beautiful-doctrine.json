@@ -2,5 +2,48 @@
   "title": "Beautiful Doctrine",
   "imageSrc": "/images/sermonSeries/beautiful-doctrine/imageSrc.jpeg",
   "startDate": "2025-01-12",
-  "sermons": []
+  "sermons": [
+    {
+      "title": "For The Sake of Unity",
+      "speaker": "Cody Bishop",
+      "videoUrl": "https://youtu.be/gi15U8Q68lk?si=Jf9ThBr4eyAqVZm8",
+      "date": "2025-05-04"
+    },
+    {
+      "title": "Renewed Agents of Renewal",
+      "speaker": "Cody Bishop",
+      "videoUrl": "https://youtu.be/txphWQdtWdU?si=kP6Jsejvkgdyw6Qb",
+      "date": "2025-04-27"
+    },
+    {
+      "title": "Mercy Unbound: Escaping The Chains Of Sin",
+      "speaker": "Cody Bishop",
+      "videoUrl": "https://youtu.be/A4DivSSbJmM?si=fvjv-cNRb5IunvQa",
+      "date": "2025-04-06"
+    },
+    {
+      "title": "Authority in an Age of Anti-authority",
+      "speaker": "Cody Bishop",
+      "videoUrl": "https://youtu.be/F9oEw8EJPkw?si=8SU1G5A81ikOJ5OL",
+      "date": "2025-03-09"
+    },
+    {
+      "title": "Faith: A Review and Expectation",
+      "speaker": "Cody Bishop",
+      "videoUrl": "https://youtu.be/cl0lfaJkUjg?si=eus6p0eWmnXAWmW6",
+      "date": "2025-03-02"
+    },
+    {
+      "title": "BEWARE! False Teachers are Among Us",
+      "speaker": "Cody Bishop",
+      "videoUrl": "https://youtu.be/ync1jpSoN2Q?si=1BJXmKAcUOgJaUCF",
+      "date": "2025-02-09"
+    },
+    {
+      "title": "Healthy Elders = Healthy Church",
+      "speaker": "Cody Bishop",
+      "videoUrl": "https://youtu.be/_4GfrnXRlGY?si=PTNkEvjl5f0U__Sy",
+      "date": "2025-02-02"
+    }
+  ]
 }

@@ -1,0 +1,56 @@
+{
+  "title": "The Genesis of Jesus",
+  "imageSrc": "/images/sermonSeries/the-genesis-of-jesus/imageSrc.jpeg",
+  "startDate": "2025-11-30",
+  "sermons": [
+    {
+      "title": "An Unbelievable Conception",
+      "description": "Luke 1:5-25",
+      "speaker": "Chandler Nick",
+      "videoUrl": "https://youtu.be/WETSmEECR_E",
+      "date": "2025-11-30"
+    },
+    {
+      "title": "Hallelujah! For the Savior!",
+      "description": "Luke 1:39-56",
+      "speaker": "Cody Bishop",
+      "videoUrl": "https://youtu.be/LUmMUIyMFs8",
+      "date": "2025-12-14"
+    },
+    {
+      "title": "The Horn and the Herald",
+      "description": "Luke 1:57-80",
+      "speaker": "Cody Bishop",
+      "videoUrl": "https://youtu.be/lfv5HhJoN40",
+      "date": "2025-12-21"
+    },
+    {
+      "title": "Savior for Sinners ~ Savior for Me",
+      "description": "Luke 2:1-14",
+      "speaker": "Cody Bishop",
+      "videoUrl": "https://youtu.be/w_M3WvG9GsY",
+      "date": "2025-12-24"
+    },
+    {
+      "title": "Twas The Day After Christmas",
+      "description": "Luke 2:15-21",
+      "speaker": "Gregg Pfister",
+      "videoUrl": "https://youtu.be/PwJaTK5QaPc",
+      "date": "2025-12-28"
+    },
+    {
+      "title": "Salvation and a Sword",
+      "description": "Luke 2:22-40",
+      "speaker": "Chandler Nick",
+      "videoUrl": "https://youtu.be/61gvHhAOAGs",
+      "date": "2026-01-04"
+    },
+    {
+      "title": "Left Behind!",
+      "description": "Luke 2:41-52",
+      "speaker": "Cody Bishop",
+      "videoUrl": "https://youtu.be/fyVXkvzl6gU",
+      "date": "2026-01-11"
+    }
+  ]
+}

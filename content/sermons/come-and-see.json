@@ -1,0 +1,31 @@
+{
+  "title": "Come and See",
+  "imageSrc": "/images/sermonSeries/come-and-see/imageSrc.png",
+  "startDate": "2026-02-22",
+  "sermons": [
+    {
+      "title": "Sinners, Save the Date!",
+      "speaker": "Chandler Nick",
+      "videoUrl": "https://youtu.be/zgd8HtHmrvw?si=X6pBklzHAUKGyH1S",
+      "date": "2026-03-15"
+    },
+    {
+      "title": " Caught and Cleaned",
+      "speaker": "Cody Bishop",
+      "videoUrl": "https://youtu.be/MyPtFniF1WQ?si=SBrZq7jRd66TQytG",
+      "date": "2026-03-08"
+    },
+    {
+      "title": "Power and Purpose in the Kingdom of Christ",
+      "speaker": "Cody Bishop",
+      "videoUrl": "https://youtu.be/00U_1aviiY8?si=haEvn3dYkXrBwTb3",
+      "date": "2026-03-01"
+    },
+    {
+      "title": "Showdown in the Synagogue",
+      "speaker": "Cody Bishop",
+      "videoUrl": "https://youtu.be/62K2Pf90xnU?si=RWBf1kO_CouA2nTq",
+      "date": "2026-02-22"
+    }
+  ]
+}

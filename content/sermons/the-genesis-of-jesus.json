@@ -4,46 +4,22 @@
   "startDate": "2025-11-30",
   "sermons": [
     {
-      "title": "An Unbelievable Conception",
-      "description": "Luke 1:5-25",
-      "speaker": "Chandler Nick",
-      "videoUrl": "https://youtu.be/WETSmEECR_E",
-      "date": "2025-11-30"
-    },
-    {
-      "title": "Hallelujah! For the Savior!",
-      "description": "Luke 1:39-56",
+      "title": " Duel in the Desert",
       "speaker": "Cody Bishop",
-      "videoUrl": "https://youtu.be/LUmMUIyMFs8",
-      "date": "2025-12-14"
+      "videoUrl": "https://youtu.be/kVUqBqtZEBI?si=8na3wqXCD_5cKTne",
+      "date": "2026-02-15"
     },
     {
-      "title": "The Horn and the Herald",
-      "description": "Luke 1:57-80",
+      "title": " A New World Order",
       "speaker": "Cody Bishop",
-      "videoUrl": "https://youtu.be/lfv5HhJoN40",
-      "date": "2025-12-21"
+      "videoUrl": "https://youtu.be/Go51bmkpRhs?si=yrXZE1qqEZ9bCSUU",
+      "date": "2026-02-08"
     },
     {
-      "title": "Savior for Sinners ~ Savior for Me",
-      "description": "Luke 2:1-14",
+      "title": "Jesus or Judgment",
       "speaker": "Cody Bishop",
-      "videoUrl": "https://youtu.be/w_M3WvG9GsY",
-      "date": "2025-12-24"
-    },
-    {
-      "title": "Twas The Day After Christmas",
-      "description": "Luke 2:15-21",
-      "speaker": "Gregg Pfister",
-      "videoUrl": "https://youtu.be/PwJaTK5QaPc",
-      "date": "2025-12-28"
-    },
-    {
-      "title": "Salvation and a Sword",
-      "description": "Luke 2:22-40",
-      "speaker": "Chandler Nick",
-      "videoUrl": "https://youtu.be/61gvHhAOAGs",
-      "date": "2026-01-04"
+      "videoUrl": "https://youtu.be/EXxsJ9v_PaE?si=_om4aEDj3qyXJ0eg",
+      "date": "2026-02-01"
     },
     {
       "title": "Left Behind!",
@@ -53,22 +29,52 @@
       "date": "2026-01-11"
     },
     {
-      "title": "Jesus or Judgment",
-      "speaker": "Cody Bishop",
-      "videoUrl": "https://youtu.be/EXxsJ9v_PaE?si=_om4aEDj3qyXJ0eg",
-      "date": "2026-02-01"
+      "title": "Salvation and a Sword",
+      "description": "Luke 2:22-40",
+      "speaker": "Chandler Nick",
+      "videoUrl": "https://youtu.be/61gvHhAOAGs",
+      "date": "2026-01-04"
     },
     {
-      "title": " A New World Order",
-      "speaker": "Cody Bishop",
-      "videoUrl": "https://youtu.be/Go51bmkpRhs?si=yrXZE1qqEZ9bCSUU",
-      "date": "2026-02-08"
+      "title": "Twas The Day After Christmas",
+      "description": "Luke 2:15-21",
+      "speaker": "Gregg Pfister",
+      "videoUrl": "https://youtu.be/PwJaTK5QaPc",
+      "date": "2025-12-28"
     },
     {
-      "title": " Duel in the Desert",
+      "title": "Savior for Sinners ~ Savior for Me",
+      "description": "Luke 2:1-14",
       "speaker": "Cody Bishop",
-      "videoUrl": "https://youtu.be/kVUqBqtZEBI?si=8na3wqXCD_5cKTne",
-      "date": "2026-02-15"
+      "videoUrl": "https://youtu.be/w_M3WvG9GsY",
+      "date": "2025-12-24"
+    },
+    {
+      "title": "The Horn and the Herald",
+      "description": "Luke 1:57-80",
+      "speaker": "Cody Bishop",
+      "videoUrl": "https://youtu.be/lfv5HhJoN40",
+      "date": "2025-12-21"
+    },
+    {
+      "title": "Hallelujah! For the Savior!",
+      "description": "Luke 1:39-56",
+      "speaker": "Cody Bishop",
+      "videoUrl": "https://youtu.be/LUmMUIyMFs8",
+      "date": "2025-12-14"
+    },
+    {
+      "title": "An Inconceivable Conception",
+      "speaker": "Cody Bishop",
+      "videoUrl": "https://youtu.be/OYOg52vvWEk?si=y8QV9B_Dyr7aD1r0",
+      "date": "2025-12-07"
+    },
+    {
+      "title": "An Unbelievable Conception",
+      "description": "Luke 1:5-25",
+      "speaker": "Chandler Nick",
+      "videoUrl": "https://youtu.be/WETSmEECR_E",
+      "date": "2025-11-30"
     }
   ]
 }
